@@ -45,7 +45,7 @@ export default function RootLayout({
                 Blog
               </Link>
               <a
-                href="tel:+1-800-000-0000"
+                href="mailto:aaronspoorconstruction@gmail.com"
                 className="bg-brand-accent text-white px-4 py-1.5 rounded font-semibold hover:opacity-90 transition-opacity"
               >
                 Get a Quote
@@ -88,11 +88,20 @@ export default function RootLayout({
               </ul>
             </div>
             <div>
-              <p className="text-white font-semibold mb-2">Service Area</p>
-              <p>
-                Serving Grand Rapids, Lansing, Ann Arbor, Kalamazoo, Flint,
-                Traverse City, and all of Michigan.
-              </p>
+              <p className="text-white font-semibold mb-2">Contact</p>
+              <ul className="space-y-1">
+                <li>
+                  <a
+                    href="mailto:aaronspoorconstruction@gmail.com"
+                    className="hover:text-white"
+                  >
+                    aaronspoorconstruction@gmail.com
+                  </a>
+                </li>
+                <li className="text-gray-500 text-xs pt-1">
+                  Serving all of Michigan
+                </li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 text-center text-xs py-4 text-gray-600">

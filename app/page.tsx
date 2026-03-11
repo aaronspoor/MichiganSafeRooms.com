@@ -36,7 +36,7 @@ export default function HomePage() {
               Read the Blog →
             </Link>
             <a
-              href="tel:+1-800-000-0000"
+              href="mailto:aaronspoorconstruction@gmail.com"
               className="border-2 border-white text-white hover:bg-white hover:text-brand font-bold px-8 py-3 rounded-lg transition-colors"
             >
               Get a Free Quote
@@ -146,10 +146,10 @@ export default function HomePage() {
           assessment and quote.
         </p>
         <a
-          href="tel:+1-800-000-0000"
+          href="mailto:aaronspoorconstruction@gmail.com"
           className="inline-block bg-brand text-white font-bold px-10 py-4 rounded-lg hover:opacity-90 transition-opacity text-lg"
         >
-          Call Now for a Free Quote
+          Email Us for a Free Quote
         </a>
       </section>
     </>

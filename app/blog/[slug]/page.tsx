@@ -129,10 +129,10 @@ export default function BlogPostPage({ params }: Props) {
             major Michigan cities and counties.
           </p>
           <a
-            href="tel:+1-800-000-0000"
+            href="mailto:aaronspoorconstruction@gmail.com"
             className="inline-block bg-brand-accent text-white font-bold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
           >
-            Call for a Free Quote
+            Email for a Free Quote
           </a>
         </div>
 
