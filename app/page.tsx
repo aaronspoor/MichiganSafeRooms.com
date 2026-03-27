@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/posts";
 import FaqAccordion from "@/app/components/FaqAccordion";
+import ContactForm from "@/app/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Michigan Safe Rooms | Steel Safe Room Installation",
@@ -184,113 +185,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* TODO: wire action to /api/contact when a backend is ready */}
-          <form
-            action="mailto:aaronspoorconstruction@gmail.com"
-            method="POST"
-            encType="text/plain"
-            className="bg-white border border-gray-200 rounded-xl shadow-sm p-8 space-y-5"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="name">
-                  Full Name *
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  placeholder="Jane Smith"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="phone">
-                  Phone Number *
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  placeholder="(555) 555-5555"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="email">
-                Email Address *
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="jane@example.com"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="address">
-                Property Address
-              </label>
-              <input
-                id="address"
-                name="address"
-                type="text"
-                placeholder="123 Main St, City, MI"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="interest">
-                Shelter Interest
-              </label>
-              <select
-                id="interest"
-                name="interest"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand bg-white"
-              >
-                <option value="">— Select a model —</option>
-                <option value="essential">Essential (4′ × 4′)</option>
-                <option value="family">Family (6′ × 8′)</option>
-                <option value="ultimate">Ultimate (8′ × 12′)</option>
-                <option value="not-sure">Not sure yet</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="message">
-                Questions or Notes
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                placeholder="Anything you'd like us to know before we reach out..."
-                className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-brand-accent hover:opacity-90 text-white font-bold py-4 rounded-lg text-lg transition-opacity"
-            >
-              Send My Quote Request
-            </button>
-
-            <p className="text-center text-xs text-gray-400">
-              Or email us directly:{" "}
-              <a href="mailto:aaronspoorconstruction@gmail.com" className="text-brand-light hover:underline">
-                aaronspoorconstruction@gmail.com
-              </a>
-            </p>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
