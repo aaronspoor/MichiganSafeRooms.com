@@ -2,14 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* next/font/google handles Barlow Condensed and DM Sans — no @import needed */
 
-/* Prose styles for blog body content */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-dm), ui-sans-serif, system-ui;
+  }
+
+  /* Heading elements use Barlow Condensed by default */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-barlow), sans-serif;
+  }
+}
+
+/* ── Prose styles for blog body content ──────────────────────────────────── */
 .prose h2 {
-  @apply text-2xl font-bold text-brand mt-8 mb-3;
+  @apply font-heading text-2xl font-bold uppercase tracking-tight text-brand mt-8 mb-3;
 }
 .prose h3 {
-  @apply text-xl font-semibold text-brand mt-6 mb-2;
+  @apply font-heading text-xl font-bold uppercase tracking-tight text-brand mt-6 mb-2;
 }
 .prose p {
   @apply text-gray-700 leading-relaxed mb-4;

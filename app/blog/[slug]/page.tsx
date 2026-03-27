@@ -71,45 +71,48 @@ export default function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      {/* ── Post header banner ──────────────────────────────────────────── */}
+      <section className="bg-gradient-to-br from-[#0b1929] via-brand to-[#1a3a6e] text-white py-12 px-4">
+        <div className="max-w-3xl mx-auto">
+          {/* Breadcrumb */}
+          <nav className="text-sm text-blue-300 mb-6" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            {" / "}
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            {" / "}
+            <span className="text-blue-100">{post.title}</span>
+          </nav>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs bg-white/10 border border-white/20 text-brand-accent px-2.5 py-1 rounded font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Headline */}
+          <h1 className="font-heading text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white leading-tight mb-4">
+            {post.title}
+          </h1>
+
+          {/* Meta */}
+          <div className="flex items-center gap-3 text-sm text-blue-200">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <span>·</span>
+            <span>Michigan Safe Rooms Editorial Team</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Post body ──────────────────────────────────────────────────── */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-brand-light">
-            Home
-          </Link>{" "}
-          /{" "}
-          <Link href="/blog" className="hover:text-brand-light">
-            Blog
-          </Link>{" "}
-          / <span className="text-gray-800">{post.title}</span>
-        </nav>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs bg-blue-50 text-brand-light px-2.5 py-1 rounded font-medium"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-brand leading-tight mb-4">
-          {post.title}
-        </h1>
-
-        {/* Meta */}
-        <div className="flex items-center gap-3 text-sm text-gray-500 mb-8 pb-8 border-b">
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-          <span>·</span>
-          <span>Michigan Safe Rooms Editorial Team</span>
-        </div>
-
         {/* Excerpt / lede */}
-        <p className="text-lg text-gray-600 leading-relaxed mb-8 font-medium">
+        <p className="text-lg text-gray-600 leading-relaxed mb-8 font-medium border-l-4 border-brand-accent pl-4">
           {post.excerpt}
         </p>
 
@@ -120,25 +123,25 @@ export default function BlogPostPage({ params }: Props) {
         />
 
         {/* CTA Box */}
-        <div className="mt-12 bg-brand rounded-xl p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-3">
+        <div className="mt-14 bg-gradient-to-br from-brand to-[#1a3a6e] rounded-xl p-8 text-center text-white">
+          <h2 className="font-heading text-3xl font-extrabold uppercase tracking-tight mb-3">
             Ready to Install a Safe Room?
           </h2>
-          <p className="text-blue-100 mb-6">
-            Get a free quote from a Michigan-licensed contractor. We serve all
-            major Michigan cities and counties.
+          <p className="text-blue-100 mb-6 max-w-md mx-auto leading-relaxed">
+            Get a free quote from our team. We serve all major Michigan cities and counties —
+            fast install times, lifetime structural warranty.
           </p>
           <a
-            href="mailto:aaronspoorconstruction@gmail.com"
+            href="/#contact"
             className="inline-block bg-brand-accent text-white font-bold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
           >
-            Email for a Free Quote
+            Get a Free Quote
           </a>
         </div>
 
         {/* Back link */}
         <div className="mt-10 text-center">
-          <Link href="/blog" className="text-brand-light hover:underline font-medium">
+          <Link href="/blog" className="text-brand-light hover:underline font-semibold">
             ← Back to all articles
           </Link>
         </div>
