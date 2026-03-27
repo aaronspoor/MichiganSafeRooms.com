@@ -9,65 +9,18 @@ export const metadata: Metadata = {
     "Premium steel safe rooms designed, fabricated, and installed across lower Michigan. Free consultations — fast installs — lifetime structural warranty.",
 };
 
-// ── Product tiers ─────────────────────────────────────────────────────────────
-// Edit names, dimensions, features, and prices here
-const PRODUCTS = [
-  {
-    name: "Essential",
-    dimensions: '4′ × 4′ × 7′',
-    sqft: "16 sq ft",
-    capacity: "Seats 4–6",
-    price: "$3,500",
-    features: [
-      "FEMA P-320 rated",
-      "14-gauge steel walls",
-      "Reinforced steel door",
-      "Passive ventilation system",
-    ],
-    highlight: false,
-  },
-  {
-    name: "Family",
-    dimensions: '6′ × 8′ × 7′',
-    sqft: "48 sq ft",
-    capacity: "Seats 8–10",
-    price: "$5,200",
-    features: [
-      "Everything in Essential",
-      "Built-in bench seating",
-      "Interior lighting",
-      "ADA-accessible door width",
-    ],
-    highlight: true, // most popular
-  },
-  {
-    name: "Ultimate",
-    dimensions: '8′ × 12′ × 7′',
-    sqft: "96 sq ft",
-    capacity: "Seats 16–20",
-    price: "$8,900",
-    features: [
-      "Everything in Family",
-      "Electrical outlet ready",
-      "Climate control prep",
-      "Custom interior layout",
-    ],
-    highlight: false,
-  },
-];
-
 // ── FAQ items ─────────────────────────────────────────────────────────────────
 // Edit questions and answers here
 const FAQ_ITEMS = [
   {
     question: "What are your safe rooms made of?",
     answer:
-      "Our shelters are fabricated from heavy-gauge structural steel — no concrete, no wood framing. Every unit is welded, not bolted, giving you a seamless enclosure rated to withstand the highest wind-load and debris-impact standards set by FEMA P-320.",
+      "Our shelters are constructed from heavy-gauge structural steel panels, bolted together for a rock-solid enclosure that meets or exceeds FEMA P-320 standards for wind load and debris impact.",
   },
   {
     question: "How long does installation take?",
     answer:
-      "Most installations are completed in a single day. We handle site prep, anchoring, and final inspection before we leave. Because we're centrally located in lower Michigan, scheduling is fast — typical lead time is 2–4 weeks from deposit.",
+      "Most installations are completed in a single day. We handle site prep, anchoring, and final inspection before we leave.",
   },
   {
     question: "Do I need a permit to install a safe room?",
@@ -77,12 +30,12 @@ const FAQ_ITEMS = [
   {
     question: "How much does a safe room cost?",
     answer:
-      "Our shelters start at $3,500 for the Essential model. Final pricing depends on size, site conditions, and any custom options. All quotes are free and include an on-site assessment with no obligation.",
+      "Our shelters start at $4,000. Final pricing depends on size, site conditions, and any custom options. All quotes are free and include an on-site assessment with no obligation.",
   },
   {
     question: "Are your shelters FEMA rated?",
     answer:
-      "Yes. Every Michigan Safe Rooms unit is engineered to meet FEMA P-320 standards, which specify performance requirements for safe rooms against extreme wind events. We provide documentation for your records and insurance provider.",
+      "Yes. Every Michigan Safe Rooms unit is engineered to meet FEMA P-320 standards, which specify performance requirements for safe rooms against extreme wind events.",
   },
   {
     question: "What areas of Michigan do you serve?",
@@ -136,31 +89,22 @@ export default function HomePage() {
             >
               Get a Free Quote
             </a>
-            {/* ── PHONE: update (XXX) XXX-XXXX and tel: href ── */}
             <a
-              href="tel:+1XXXXXXXXXX"
+              href="tel:+19896277291"
               className="border-2 border-white/40 text-white hover:border-white hover:bg-white/10 font-bold px-10 py-4 rounded-lg transition-all text-lg"
             >
-              Call (XXX) XXX-XXXX
+              Call (989) 627-7291
             </a>
           </div>
 
-          {/* Trust stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-md mx-auto">
-            {[
-              { num: "500+", label: "Installs Completed" },
-              { num: "10+", label: "Years Serving MI" },
-              { num: "Lifetime", label: "Structural Warranty" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-heading text-3xl sm:text-4xl font-extrabold text-brand-accent">
-                  {stat.num}
-                </div>
-                <div className="text-xs text-blue-200 mt-1 uppercase tracking-wide">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+          {/* Trust stat */}
+          <div className="text-center">
+            <div className="font-heading text-5xl sm:text-6xl font-extrabold text-brand-accent">
+              Lifetime
+            </div>
+            <div className="text-sm text-blue-200 mt-2 uppercase tracking-widest font-semibold">
+              Structural Warranty
+            </div>
           </div>
         </div>
       </section>
@@ -186,8 +130,8 @@ export default function HomePage() {
               },
               {
                 step: "02",
-                title: "Custom Fabrication",
-                body: "Your shelter is cut, welded, and finished in our Michigan facility to exact specifications. Heavy-gauge steel built to outlast your home.",
+                title: "Deposit & Installation Scheduled",
+                body: "We collect a deposit and coordinate everything needed on our end and yours — permits, site prep details, and scheduling — so your install day goes smoothly.",
               },
               {
                 step: "03",
@@ -203,80 +147,6 @@ export default function HomePage() {
                   {item.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Products ──────────────────────────────────────────────────────── */}
-      <section id="products" className="py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-brand-accent text-xs font-bold uppercase tracking-widest mb-2">
-              Steel Safe Rooms
-            </p>
-            <h2 className="font-heading text-4xl sm:text-5xl font-extrabold uppercase text-brand">
-              Choose Your Shelter
-            </h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-              Every model is FEMA P-320 rated, welded steel construction, and installed by our crew.
-              Prices below are starting points — contact us for a precise quote.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {PRODUCTS.map((product) => (
-              <div
-                key={product.name}
-                className={`relative rounded-xl border-2 p-8 flex flex-col ${
-                  product.highlight
-                    ? "border-brand-accent shadow-xl"
-                    : "border-gray-200 shadow-sm"
-                }`}
-              >
-                {/* Most popular badge */}
-                {product.highlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="bg-brand-accent text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full whitespace-nowrap">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                <div className="mb-6">
-                  <h3 className="font-heading text-3xl font-extrabold uppercase text-brand mb-1">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-500 text-sm">{product.dimensions}</p>
-                  <p className="text-gray-400 text-xs">{product.sqft} · {product.capacity}</p>
-                </div>
-
-                <ul className="space-y-2.5 mb-8 flex-1">
-                  {product.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
-                      <span className="text-brand-accent mt-0.5 shrink-0">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="border-t border-gray-100 pt-6">
-                  <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">Starting at</p>
-                  <p className="font-heading text-4xl font-extrabold text-brand mb-4">
-                    {product.price}
-                  </p>
-                  <a
-                    href="#contact"
-                    className={`block text-center font-bold py-3 px-6 rounded-lg transition-opacity text-sm ${
-                      product.highlight
-                        ? "bg-brand-accent text-white hover:opacity-90"
-                        : "bg-brand text-white hover:opacity-90"
-                    }`}
-                  >
-                    Request a Quote
-                  </a>
-                </div>
               </div>
             ))}
           </div>

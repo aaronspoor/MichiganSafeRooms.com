@@ -75,7 +75,6 @@ export default function RootLayout({
 
             {/* Nav links — hidden on small screens */}
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-blue-100">
-              <a href="/#products" className="hover:text-white transition-colors">Products</a>
               <a href="/#how-it-works" className="hover:text-white transition-colors">How It Works</a>
               <a href="/#faq" className="hover:text-white transition-colors">FAQ</a>
               <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
@@ -84,12 +83,11 @@ export default function RootLayout({
 
             {/* Right side: phone + CTA */}
             <div className="flex items-center gap-4 shrink-0">
-              {/* ── PHONE NUMBER: update (XXX) XXX-XXXX and the tel: href below ── */}
               <a
-                href="tel:+1XXXXXXXXXX"
+                href="tel:+19896277291"
                 className="hidden sm:block text-brand-accent font-semibold text-sm hover:opacity-80 transition-opacity"
               >
-                (XXX) XXX-XXXX
+                (989) 627-7291
               </a>
               <a
                 href="/#contact"
@@ -121,9 +119,8 @@ export default function RootLayout({
                 Protecting Michigan families with premium steel safe rooms.
                 Centrally located in lower Michigan — fast install times across the state.
               </p>
-              {/* ── PHONE NUMBER: update (XXX) XXX-XXXX and tel: href ── */}
-              <a href="tel:+1XXXXXXXXXX" className="text-brand-accent font-semibold hover:opacity-80">
-                (XXX) XXX-XXXX
+              <a href="tel:+19896277291" className="text-brand-accent font-semibold hover:opacity-80">
+                (989) 627-7291
               </a>
             </div>
 
@@ -131,7 +128,6 @@ export default function RootLayout({
             <div>
               <p className="text-white font-semibold mb-3">Quick Links</p>
               <ul className="space-y-2">
-                <li><a href="/#products" className="hover:text-white transition-colors">Products</a></li>
                 <li><a href="/#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
                 <li><a href="/#faq" className="hover:text-white transition-colors">FAQ</a></li>
                 <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
