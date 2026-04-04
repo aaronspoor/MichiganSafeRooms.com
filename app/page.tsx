@@ -4,6 +4,7 @@ import { getAllPosts, formatDate } from "@/lib/posts";
 import FaqAccordion from "@/app/components/FaqAccordion";
 import ContactForm from "@/app/components/ContactForm";
 import TestimonialsSection from "@/app/components/TestimonialsSection";
+import AboutSection from "@/app/components/AboutSection";
 
 export const metadata: Metadata = {
   title: "Michigan Safe Rooms | Steel Safe Room Installation",
@@ -254,6 +255,7 @@ export default function HomePage() {
           </div>
         </section>
       )}
+      <AboutSection />
     </>
   );
 }
