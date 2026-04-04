@@ -12,7 +12,7 @@ function esc(str: unknown): string {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, email, address, interest, message } = body;
+    const { name, phone, email, address, interest, message, callTime } = body;
 
     if (!name || !phone || !email) {
       return NextResponse.json(
@@ -59,6 +59,10 @@ export async function POST(request: NextRequest) {
             <tr>
               <td style="padding: 8px 12px; background: #f8f9fa; font-weight: 600; border: 1px solid #e5e7eb; vertical-align: top;">Message</td>
               <td style="padding: 8px 12px; border: 1px solid #e5e7eb; white-space: pre-wrap;">${esc(message) || "—"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px; background: #f8f9fa; font-weight: 600; border: 1px solid #e5e7eb;">Best Time to Call</td>
+              <td style="padding: 8px 12px; border: 1px solid #e5e7eb;">${esc(callTime) || "—"}</td>
             </tr>
           </table>
           <p style="margin-top: 24px; color: #6b7280; font-size: 13px;">

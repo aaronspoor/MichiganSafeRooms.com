@@ -144,6 +144,22 @@ export default function ContactForm() {
         />
       </div>
 
+      <div>
+        <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="callTime">
+          Best Time to Call
+        </label>
+        <select
+          id="callTime"
+          name="callTime"
+          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand bg-white"
+        >
+          <option value="">— Select a time —</option>
+          <option value="morning">Morning (8am–12pm)</option>
+          <option value="afternoon">Afternoon (12pm–5pm)</option>
+          <option value="evening">Evening (5pm–8pm)</option>
+        </select>
+      </div>
+
       {error && (
         <p className="text-red-600 text-sm text-center bg-red-50 border border-red-200 rounded-lg py-3 px-4">
           {error}
@@ -155,8 +171,14 @@ export default function ContactForm() {
         disabled={submitting}
         className="w-full bg-brand-accent hover:opacity-90 disabled:opacity-60 text-white font-bold py-4 rounded-lg text-lg transition-opacity"
       >
-        {submitting ? "Sending…" : "Send My Quote Request"}
+        {submitting ? "Sending…" : "Request My Free On-Site Consultation"}
       </button>
+      <p className="text-center text-xs text-gray-400 mt-2">
+        We respond within 1 business day. No spam, no pressure.
+      </p>
+      <p className="text-center text-xs text-gray-400">
+        Your info is never shared or sold.
+      </p>
     </form>
   );
 }
