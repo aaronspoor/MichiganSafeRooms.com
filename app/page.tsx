@@ -5,6 +5,7 @@ import FaqAccordion from "@/app/components/FaqAccordion";
 import ContactForm from "@/app/components/ContactForm";
 import TestimonialsSection from "@/app/components/TestimonialsSection";
 import AboutSection from "@/app/components/AboutSection";
+import PricingSection from "@/app/components/PricingSection";
 
 export const metadata: Metadata = {
   title: "Michigan Safe Rooms | Steel Safe Room Installation",
@@ -164,6 +165,8 @@ export default function HomePage() {
       </section>
 
       <TestimonialsSection />
+
+      <PricingSection />
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <section id="faq" className="bg-gray-50 py-20 px-4">
