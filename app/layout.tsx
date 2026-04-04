@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import TrustBar from "@/app/components/TrustBar";
+import StickyMobileCta from "@/app/components/StickyMobileCta";
 
 // Barlow Condensed — headings
 const barlow = Barlow_Condensed({
@@ -163,6 +164,7 @@ export default function RootLayout({
         </footer>
 
         <Analytics />
+        <StickyMobileCta />
       </body>
     </html>
   );
