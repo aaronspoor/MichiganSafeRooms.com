@@ -25,8 +25,8 @@ export default function ContactForm() {
       if (!res.ok) throw new Error("Failed to send");
       setSuccess(true);
       // Fire GA4 conversion event
-      if (typeof window !== "undefined" && typeof (window as Window & { gtag?: Function }).gtag === "function") {
-        (window as Window & { gtag: Function }).gtag("event", "form_submit", {
+      if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: Function }).gtag === "function") {
+        (window as unknown as { gtag: Function }).gtag("event", "form_submit", {
           event_category: "Contact",
           event_label: "Quote Request",
         });
