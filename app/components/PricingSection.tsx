@@ -2,7 +2,7 @@ const TIERS = [
   {
     name: "Small Safe Room",
     size: "4×6 ft",
-    price: "Starting at $3,200",
+    price: "Starting at $6,999",
     capacity: "Ideal for 2–4 people",
     popular: false,
     features: ["Heavy-gauge steel construction", "FEMA P-320 rated", "Same-day installation"],
@@ -10,7 +10,7 @@ const TIERS = [
   {
     name: "Medium Safe Room",
     size: "8×8 ft",
-    price: "Starting at $5,500",
+    price: "Starting at $9,999",
     capacity: "Most popular — fits 4–8 people",
     popular: true,
     features: ["Heavy-gauge steel construction", "FEMA P-320 rated", "Same-day installation"],
@@ -18,7 +18,7 @@ const TIERS = [
   {
     name: "Large Safe Room",
     size: "10×10 ft",
-    price: "Starting at $7,800",
+    price: "Starting at $13,999",
     capacity: "Family + neighbors — fits 8–12 people",
     popular: false,
     features: ["Heavy-gauge steel construction", "FEMA P-320 rated", "Same-day installation"],
