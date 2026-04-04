@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
+import TrustBar from "@/app/components/TrustBar";
 
 // Barlow Condensed — headings
 const barlow = Barlow_Condensed({
@@ -99,6 +100,8 @@ export default function RootLayout({
 
           </div>
         </header>
+
+        <TrustBar />
 
         {/* ── Page content ─────────────────────────────────────────────── */}
         <main>{children}</main>
