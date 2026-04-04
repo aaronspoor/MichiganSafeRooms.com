@@ -8,9 +8,28 @@ import AboutSection from "@/app/components/AboutSection";
 import PricingSection from "@/app/components/PricingSection";
 
 export const metadata: Metadata = {
-  title: "Michigan Safe Rooms | Steel Safe Room Installation",
+  title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer | Free Quote — Michigan Safe Rooms",
   description:
-    "Premium steel safe rooms designed, fabricated, and installed across lower Michigan. Free consultations — fast installs — lifetime structural warranty.",
+    "Michigan's dedicated safe room installer. We design, fabricate & install FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation. Free consultation — call (989) 627-7291.",
+  alternates: {
+    canonical: "https://michigansaferooms.com",
+  },
+  openGraph: {
+    title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer | Free Quote",
+    description:
+      "Michigan's dedicated safe room installer. FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation. Free consultation.",
+    url: "https://michigansaferooms.com",
+    // TODO: Replace with real OG image once photography is complete
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Michigan Safe Rooms Installation" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer",
+    description:
+      "Michigan's dedicated safe room installer. FEMA P-320 compliant. EF5-rated. Same-day installation. Free quote — call (989) 627-7291.",
+    // TODO: Replace with real Twitter card image
+    images: ["/og-image.jpg"],
+  },
 };
 
 // ── FAQ items ─────────────────────────────────────────────────────────────────
