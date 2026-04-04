@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/posts";
 import FaqAccordion from "@/app/components/FaqAccordion";
 import ContactForm from "@/app/components/ContactForm";
+import TestimonialsSection from "@/app/components/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: "Michigan Safe Rooms | Steel Safe Room Installation",
@@ -160,6 +161,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <section id="faq" className="bg-gray-50 py-20 px-4">
