@@ -123,57 +123,83 @@ export default function RootLayout({
 
         {/* ── Footer ───────────────────────────────────────────────────── */}
         <footer className="bg-gray-900 text-gray-400">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-4 gap-8 text-sm">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
 
-            {/* Brand column */}
-            <div className="sm:col-span-2">
-              <div className="flex items-center gap-2.5 mb-4">
+            {/* Column 1: Brand */}
+            <div>
+              <div className="flex items-center gap-2.5 mb-3">
                 <ShieldIcon className="w-6 h-6 text-brand-accent" />
-                <span className="text-white font-heading font-bold text-lg tracking-wide">
-                  Michigan Safe Rooms
-                </span>
+                <span className="text-white font-heading font-bold text-lg tracking-wide">Michigan Safe Rooms</span>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-4">
-                Protecting Michigan families with premium steel safe rooms.
-                Centrally located in lower Michigan — fast install times across the state.
+              <p className="text-gray-400 leading-relaxed mb-3 text-xs">
+                Protecting Michigan families with premium FEMA-compliant steel safe rooms. Fast installs across lower Michigan.
               </p>
-              <a href="tel:+19896277291" className="text-brand-accent font-semibold hover:opacity-80">
-                (989) 627-7291
-              </a>
+              <a href="tel:+19896277291" className="text-brand-accent font-semibold hover:opacity-80 block mb-1">(989) 627-7291</a>
+              <a href="mailto:aaronspoorconstruction@gmail.com" className="hover:text-white transition-colors text-xs">aaronspoorconstruction@gmail.com</a>
             </div>
 
-            {/* Quick links */}
+            {/* Column 2: Quick Links */}
             <div>
               <p className="text-white font-semibold mb-3">Quick Links</p>
               <ul className="space-y-2">
+                <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
                 <li><a href="/#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
+                <li><Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+                <li><a href="/#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="/#faq" className="hover:text-white transition-colors">FAQ</a></li>
                 <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><a href="/#contact" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Column 3: Service Areas */}
             <div>
-              <p className="text-white font-semibold mb-3">Contact</p>
+              <p className="text-white font-semibold mb-3">Service Areas</p>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href="mailto:aaronspoorconstruction@gmail.com"
-                    className="hover:text-white transition-colors"
-                  >
-                    aaronspoorconstruction@gmail.com
-                  </a>
-                </li>
-                <li>Durand, MI 48429</li>
-                <li className="text-gray-500 text-xs pt-1">Serving all of lower Michigan</li>
+                {[
+                  ["Lansing", "lansing"],
+                  ["Flint", "flint"],
+                  ["Grand Rapids", "grand-rapids"],
+                  ["Saginaw", "saginaw"],
+                  ["Jackson", "jackson"],
+                  ["Bay City", "bay-city"],
+                  ["Midland", "midland"],
+                  ["Holland", "holland"],
+                  ["Muskegon", "muskegon"],
+                  ["Traverse City", "traverse-city"],
+                ].map(([name, slug]) => (
+                  <li key={slug}>
+                    <Link href={`/locations/${slug}`} className="hover:text-white transition-colors">{name}, MI</Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
+            {/* Column 4: Trust Badges */}
+            <div>
+              <p className="text-white font-semibold mb-3">Our Credentials</p>
+              <ul className="space-y-3">
+                {[
+                  "FEMA P-320 Compliant",
+                  "ICC-500 Rated",
+                  "Licensed — MI Lic. #2101209885",
+                  "Fully Insured",
+                  "Lifetime Structural Warranty",
+                ].map((badge) => (
+                  <li key={badge} className="flex items-center gap-2 text-xs">
+                    <svg className="w-3.5 h-3.5 text-brand-accent shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {badge}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Copyright bar */}
           <div className="border-t border-gray-800 text-center text-xs py-4 text-gray-600">
-            © {new Date().getFullYear()} MichiganSafeRooms.com — All rights reserved.
+            © {new Date().getFullYear()} MichiganSafeRooms.com — All rights reserved. Michigan Contractor Lic. #2101209885
           </div>
         </footer>
 
