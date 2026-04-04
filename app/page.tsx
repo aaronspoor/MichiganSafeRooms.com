@@ -46,6 +46,31 @@ const FAQ_ITEMS = [
     answer:
       "We install throughout lower Michigan. Based in the Durand area, we regularly serve greater Lansing, Flint, Grand Rapids, Saginaw, Ann Arbor, Kalamazoo, Battle Creek, and surrounding communities. Contact us to confirm your area.",
   },
+  {
+    question: "Do you offer financing?",
+    answer:
+      "Yes — financing is available through third-party partners. Ask us about options during your free consultation. We want to make sure cost isn't a barrier to protecting your family.",
+  },
+  {
+    question: "What is a FEMA hazard mitigation grant and do I qualify?",
+    answer:
+      "FEMA's Hazard Mitigation Grant Program (HMGP) and Flood Mitigation Assistance (FMA) programs can cover up to 75% of safe room installation costs for qualifying homeowners in declared disaster areas. Michigan has been an active participant in these programs. Eligibility depends on your county and current grant cycles — ask us when you call and we'll point you toward the right resources.",
+  },
+  {
+    question: "Can a safe room be installed in a garage?",
+    answer:
+      "Absolutely — the garage is actually one of the most popular and practical locations for a safe room. It provides easy access from the home, usually has a concrete slab that allows for secure anchoring, and keeps the unit out of your living space entirely. We assess your garage during the free consultation and recommend the best placement.",
+  },
+  {
+    question: "What makes Michigan Safe Rooms different from national companies?",
+    answer:
+      "We're a Michigan-based, family-owned operation — not a national franchise dispatching subcontractors from out of state. When you call, you're talking to Aaron, the owner and installer. We know Michigan's permit requirements, soil conditions, and storm patterns. We can often schedule installs faster than national companies, and we stand behind every job personally. You won't get lost in a customer service queue.",
+  },
+  {
+    question: "Can I get a safe room installed before tornado season?",
+    answer:
+      "Yes — and we strongly encourage it. Michigan tornado season runs roughly April through August, and install slots fill up quickly as storm season approaches. Most installations take a single day, so even a late-spring call can get you covered before the peak risk window. Call (989) 627-7291 today to check availability.",
+  },
 ];
 
 export default function HomePage() {
