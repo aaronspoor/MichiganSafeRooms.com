@@ -97,6 +97,68 @@ export default function HomePage() {
 
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Michigan Safe Rooms",
+              url: "https://michigansaferooms.com",
+              telephone: "+19896277291",
+              email: "aaronspoorconstruction@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Durand, MI",
+                addressLocality: "Durand",
+                addressRegion: "MI",
+                postalCode: "48429",
+                addressCountry: "US",
+              },
+              areaServed: [
+                "Ingham County, MI", "Genesee County, MI", "Kent County, MI",
+                "Saginaw County, MI", "Washtenaw County, MI", "Kalamazoo County, MI",
+                "Jackson County, MI", "Bay County, MI", "Midland County, MI",
+                "Ottawa County, MI", "Muskegon County, MI", "Grand Traverse County, MI",
+                "Shiawassee County, MI", "Clinton County, MI", "Eaton County, MI",
+                "Barry County, MI", "Ionia County, MI", "Montcalm County, MI",
+              ],
+              openingHours: "Mo-Fr 08:00-18:00",
+              description:
+                "Michigan's dedicated safe room installer. FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation.",
+              priceRange: "$$$",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Safe Room Installation Michigan",
+              provider: {
+                "@type": "LocalBusiness",
+                name: "Michigan Safe Rooms",
+                url: "https://michigansaferooms.com",
+              },
+              areaServed: "Lower Michigan",
+              description:
+                "Professional design, fabrication, and installation of FEMA P-320 compliant steel safe rooms for Michigan homeowners. EF5-rated against 250 MPH winds.",
+              serviceType: "Safe Room Installation",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: FAQ_ITEMS.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              })),
+            },
+          ]),
+        }}
+      />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative bg-gradient-to-br from-[#0b1929] via-brand to-[#1a3a6e] text-white py-24 md:py-36 px-4 overflow-hidden">
