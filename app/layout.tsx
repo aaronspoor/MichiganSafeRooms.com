@@ -62,6 +62,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${barlow.variable} ${dmSans.variable}`}>
       <body className="bg-white text-gray-900 font-sans antialiased">
+        {/* Google Analytics 4 — TODO: Replace G-XXXXXXXXXX with real Measurement ID */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XXXXXXXXXX');
+            `,
+          }}
+        />
 
         {/* ── Sticky Navigation ───────────────────────────────────────── */}
         <header className="sticky top-0 z-50 bg-brand shadow-lg">
