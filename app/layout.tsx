@@ -78,6 +78,7 @@ export default function RootLayout({
             {/* Nav links — hidden on small screens */}
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-blue-100">
               <a href="/#how-it-works" className="hover:text-white transition-colors">How It Works</a>
+              <Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link>
               <a href="/#faq" className="hover:text-white transition-colors">FAQ</a>
               <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
               <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
