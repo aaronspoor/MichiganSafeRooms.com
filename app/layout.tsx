@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import TrustBar from "@/app/components/TrustBar";
 import StickyMobileCta from "@/app/components/StickyMobileCta";
+import SeasonalBanner from "@/app/components/SeasonalBanner";
 
 // Barlow Condensed — headings
 const barlow = Barlow_Condensed({
@@ -75,6 +76,8 @@ export default function RootLayout({
             `,
           }}
         />
+
+        <SeasonalBanner />
 
         {/* ── Sticky Navigation ───────────────────────────────────────── */}
         <header className="sticky top-0 z-50 bg-brand shadow-lg">
