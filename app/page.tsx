@@ -76,14 +76,17 @@ export default function HomePage() {
             <span className="text-brand-accent">Complete Protection</span>
           </h1>
 
+          <p className="text-brand-accent text-sm font-bold uppercase tracking-widest mb-4">
+            EF5-Rated | 250 MPH Tested | FEMA Compliant
+          </p>
+
           {/* Subhead */}
           <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">
-            We design, fabricate, and install premium steel safe rooms across lower Michigan.
-            One call — from free consultation to final installation, we handle everything.
+            The only dedicated safe room installer based in mid-Michigan. We fabricate, deliver, and install — everything included.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
             <a
               href="#contact"
               className="bg-brand-accent hover:opacity-90 text-white font-bold px-10 py-4 rounded-lg transition-opacity text-lg"
@@ -97,6 +100,10 @@ export default function HomePage() {
               Call (989) 627-7291
             </a>
           </div>
+
+          <p className="text-blue-200 text-sm mt-2 mb-16">
+            Serving: Lansing • Flint • Grand Rapids • Saginaw • Ann Arbor • Kalamazoo + all lower Michigan
+          </p>
 
           {/* Trust stat */}
           <div className="text-center">
