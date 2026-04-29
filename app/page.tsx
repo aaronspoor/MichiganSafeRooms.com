@@ -53,12 +53,12 @@ const FAQ_ITEMS = [
   {
     question: "How much does a safe room cost?",
     answer:
-      "Our shelters start at $4,000. Final pricing depends on size, site conditions, and any custom options. All quotes are free and include an on-site assessment with no obligation.",
+      "Our shelters start at $7,000. Final pricing depends on size, site conditions, and any custom options. All quotes are free with no obligation.",
   },
   {
     question: "Are your shelters FEMA rated?",
     answer:
-      "Yes. Every Michigan Safe Rooms unit is engineered to meet FEMA P-320 standards, which specify performance requirements for safe rooms against extreme wind events.",
+      "Every Michigan Safe Rooms unit is engineered to meet FEMA P-320 standards, which specify performance requirements for safe rooms against extreme wind events.",
   },
   {
     question: "What areas of Michigan do you serve?",
@@ -68,7 +68,7 @@ const FAQ_ITEMS = [
   {
     question: "Do you offer financing?",
     answer:
-      "Yes — financing is available through third-party partners. Ask us about options during your free consultation. We want to make sure cost isn't a barrier to protecting your family.",
+      "We want to make sure cost isn't a barrier to protecting your family. Contact us to discuss your situation and we'll work with you on timing and payment.",
   },
   {
     question: "What is a FEMA hazard mitigation grant and do I qualify?",
