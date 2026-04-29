@@ -30,10 +30,10 @@ export default function AboutSection() {
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed mb-8">
               <p>
-                Michigan Safe Rooms is a family-owned operation based in Durand, MI — centrally located in lower Michigan so we can reach any community quickly. Owner Aaron Spoor brings years of licensed construction experience to every installation, combining hands-on craftsmanship with a commitment to doing the job right the first time. Michigan Contractor License #2101209885.
+                Michigan Safe Rooms is a family-owned operation based in Durand, MI — centrally located in lower Michigan so we can reach any community quickly. Owner Aaron Spoor brings years of licensed construction experience to every installation, combining hands-on craftsmanship with a commitment to doing the job right the first time.
               </p>
               <p>
-                Aaron is also a licensed pilot and flight instructor — a discipline where there is no margin for error and every checklist matters. He applies those same exacting standards to every safe room installation. From the anchor bolts to the door hardware, nothing gets left to chance. When your family&rsquo;s safety is on the line, that level of precision isn&rsquo;t optional — it&rsquo;s the only way we know how to work.
+                Aaron is also a licensed pilot — a discipline where there is no margin for error and every checklist matters. He applies those same exacting standards to every safe room installation. From the anchor bolts to the door hardware, nothing gets left to chance. When your family&rsquo;s safety is on the line, that level of precision isn&rsquo;t optional — it&rsquo;s the only way we know how to work.
               </p>
             </div>
 

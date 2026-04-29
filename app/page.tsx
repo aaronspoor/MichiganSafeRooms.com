@@ -10,7 +10,7 @@ import PricingSection from "@/app/components/PricingSection";
 export const metadata: Metadata = {
   title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer | Free Quote — Michigan Safe Rooms",
   description:
-    "Michigan's dedicated safe room installer. We design, fabricate & install FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation. Free consultation — call (989) 627-7291.",
+    "Michigan's dedicated safe room installer. We design, fabricate & install FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation. Free quote — no obligation.",
   alternates: {
     canonical: "https://michigansaferooms.com",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer",
     description:
-      "Michigan's dedicated safe room installer. FEMA P-320 compliant. EF5-rated. Same-day installation. Free quote — call (989) 627-7291.",
+      "Michigan's dedicated safe room installer. FEMA P-320 compliant. EF5-rated. Same-day installation. Free quote — no obligation.",
     // TODO: Replace with real Twitter card image
     images: ["/og-image.jpg"],
   },
@@ -88,7 +88,7 @@ const FAQ_ITEMS = [
   {
     question: "Can I get a safe room installed before tornado season?",
     answer:
-      "Yes — and we strongly encourage it. Michigan tornado season runs roughly April through August, and install slots fill up quickly as storm season approaches. Most installations take a single day, so even a late-spring call can get you covered before the peak risk window. Call (989) 627-7291 today to check availability.",
+      "Yes — and we strongly encourage it. Michigan tornado season runs roughly April through August, and install slots fill up quickly as storm season approaches. Most installations take a single day, so even a late-spring inquiry can get you covered before the peak risk window. Contact us today to check availability.",
   },
 ];
 
@@ -107,8 +107,6 @@ export default function HomePage() {
               "@type": "LocalBusiness",
               name: "Michigan Safe Rooms",
               url: "https://michigansaferooms.com",
-              telephone: "+19896277291",
-              email: "aaronspoorconstruction@gmail.com",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Durand, MI",
@@ -202,12 +200,6 @@ export default function HomePage() {
             >
               Get a Free Quote
             </a>
-            <a
-              href="tel:+19896277291"
-              className="border-2 border-white/40 text-white hover:border-white hover:bg-white/10 font-bold px-10 py-4 rounded-lg transition-all text-lg"
-            >
-              Call (989) 627-7291
-            </a>
           </div>
 
           <p className="text-blue-200 text-sm mt-2 mb-16">
@@ -243,7 +235,7 @@ export default function HomePage() {
               {
                 step: "01",
                 title: "Free Consultation",
-                body: "We visit your property, assess the best location, and walk you through every option. No pressure, no obligation — just answers.",
+                body: "We discuss your home, walk through your options, and answer every question — at no cost and with no obligation. Getting started is as simple as a conversation.",
               },
               {
                 step: "02",

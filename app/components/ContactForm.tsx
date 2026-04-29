@@ -51,10 +51,7 @@ export default function ContactForm() {
           Message Received
         </h3>
         <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">
-          Thanks — we&rsquo;ll be in touch within one business day. You can also reach us directly at{" "}
-          <a href="tel:+19896277291" className="text-brand-accent font-semibold hover:opacity-80">
-            (989) 627-7291
-          </a>.
+          Thanks — we&rsquo;ll be in touch within one business day.
         </p>
       </div>
     );

@@ -24,16 +24,10 @@ export default function StickyMobileCta() {
         </p>
         <div className="flex gap-2 flex-1 justify-end">
           <a
-            href="tel:+19896277291"
-            className="bg-brand text-white text-xs font-bold px-3 py-2 rounded-lg whitespace-nowrap"
-          >
-            Call Now
-          </a>
-          <a
             href="#contact"
             className="bg-brand-accent text-white text-xs font-bold px-3 py-2 rounded-lg whitespace-nowrap"
           >
-            Get Quote
+            Get a Free Quote
           </a>
         </div>
         <button onClick={dismiss} className="text-gray-400 hover:text-gray-600 ml-1 shrink-0" aria-label="Dismiss">

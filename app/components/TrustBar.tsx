@@ -2,7 +2,7 @@ export default function TrustBar() {
   const items = [
     "FEMA P-320 Compliant",
     "ICC-500 Rated",
-    "Licensed & Insured | MI Lic. #2101209885",
+    "Licensed & Insured",
     "Lifetime Structural Warranty",
   ];
   return (

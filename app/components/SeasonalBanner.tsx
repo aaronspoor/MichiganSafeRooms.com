@@ -24,12 +24,8 @@ export default function SeasonalBanner() {
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
         <p className="text-sm font-semibold text-center flex-1">
           Storm season is here — install slots are filling fast.{" "}
-          <a href="tel:+19896277291" className="underline font-bold hover:opacity-80">
-            Call (989) 627-7291
-          </a>{" "}
-          or{" "}
           <a href="#contact" className="underline font-bold hover:opacity-80">
-            get a free quote today
+            Get a free quote today
           </a>
           .
         </p>

@@ -50,27 +50,14 @@ export default function TestimonialsSection() {
             <div key={r.name} className="bg-gray-50 border border-gray-100 rounded-xl p-7 shadow-sm">
               <StarRating />
               <p className="text-gray-700 leading-relaxed mb-5 text-sm">&ldquo;{r.text}&rdquo;</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-semibold text-brand text-sm">{r.name}</p>
-                  <p className="text-gray-400 text-xs">{r.city}</p>
-                </div>
-                {/* TODO: Replace with real Google review badge once reviews are live */}
-                <span className="text-xs bg-white border border-gray-200 text-gray-500 px-2 py-1 rounded font-medium flex items-center gap-1">
-                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm6.506 17.027A8.963 8.963 0 0112 20.977a8.963 8.963 0 01-8.977-8.977A8.963 8.963 0 0112 3.023c2.44 0 4.655.973 6.27 2.552l-2.543 2.543A5.472 5.472 0 0012 6.545a5.477 5.477 0 00-5.477 5.455 5.477 5.477 0 005.477 5.455 5.272 5.272 0 005.227-3.886h-5.227v-3.319h8.727c.11.578.168 1.175.168 1.791 0 4.945-3.32 8.477-8.895 8.477z" fill="#4285F4"/></svg>
-                  Google Verified
-                </span>
+              <div>
+                <p className="font-semibold text-brand text-sm">{r.name}</p>
+                <p className="text-gray-400 text-xs">{r.city}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          {/* TODO: Replace # with real Google Business Profile reviews URL */}
-          <a href="#" className="text-brand-light font-semibold hover:underline text-sm">
-            See all reviews on Google →
-          </a>
-        </div>
       </div>
     </section>
   );

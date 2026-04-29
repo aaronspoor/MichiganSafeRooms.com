@@ -100,14 +100,8 @@ export default function RootLayout({
               <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
             </nav>
 
-            {/* Right side: phone + CTA */}
+            {/* Right side: CTA */}
             <div className="flex items-center gap-4 shrink-0">
-              <a
-                href="tel:+19896277291"
-                className="hidden sm:block text-brand-accent font-semibold text-sm hover:opacity-80 transition-opacity"
-              >
-                (989) 627-7291
-              </a>
               <a
                 href="/#contact"
                 className="bg-brand-accent text-white px-4 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
@@ -137,8 +131,6 @@ export default function RootLayout({
               <p className="text-gray-400 leading-relaxed mb-3 text-xs">
                 Protecting Michigan families with premium FEMA-compliant steel safe rooms. Fast installs across lower Michigan.
               </p>
-              <a href="tel:+19896277291" className="text-brand-accent font-semibold hover:opacity-80 block mb-1">(989) 627-7291</a>
-              <a href="mailto:aaronspoorconstruction@gmail.com" className="hover:text-white transition-colors text-xs">aaronspoorconstruction@gmail.com</a>
             </div>
 
             {/* Column 2: Quick Links */}
@@ -185,7 +177,7 @@ export default function RootLayout({
                 {[
                   "FEMA P-320 Compliant",
                   "ICC-500 Rated",
-                  "Licensed — MI Lic. #2101209885",
+                  "Licensed & Insured",
                   "Fully Insured",
                   "Lifetime Structural Warranty",
                 ].map((badge) => (
@@ -202,7 +194,7 @@ export default function RootLayout({
 
           {/* Copyright bar */}
           <div className="border-t border-gray-800 text-center text-xs py-4 text-gray-600">
-            © {new Date().getFullYear()} MichiganSafeRooms.com — All rights reserved. Michigan Contractor Lic. #2101209885
+            © {new Date().getFullYear()} MichiganSafeRooms.com — All rights reserved.
           </div>
         </footer>
 
