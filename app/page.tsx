@@ -6,6 +6,7 @@ import ContactForm from "@/app/components/ContactForm";
 import TestimonialsSection from "@/app/components/TestimonialsSection";
 import AboutSection from "@/app/components/AboutSection";
 import PricingSection from "@/app/components/PricingSection";
+import GrantBanner from "@/app/components/GrantBanner";
 
 export const metadata: Metadata = {
   title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer | Free Quote — Michigan Safe Rooms",
@@ -97,6 +98,7 @@ export default function HomePage() {
 
   return (
     <>
+      <GrantBanner />
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"

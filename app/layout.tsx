@@ -97,6 +97,10 @@ export default function RootLayout({
               <a href="/#faq" className="hover:text-white transition-colors">FAQ</a>
               <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
               <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/grant" className="hover:text-white transition-colors flex items-center gap-1.5">
+                Grant Program
+                <span className="bg-green-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold leading-none">NEW</span>
+              </Link>
             </nav>
 
             {/* Right side: CTA */}
@@ -141,6 +145,7 @@ export default function RootLayout({
                 <li><a href="/#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="/#faq" className="hover:text-white transition-colors">FAQ</a></li>
                 <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/grant" className="hover:text-white transition-colors">Grant Program</Link></li>
                 <li><a href="/#contact" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
