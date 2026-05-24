@@ -24,7 +24,7 @@ export default function SeasonalBanner() {
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
         <p className="text-sm font-semibold text-center flex-1">
           Storm season is here — install slots are filling fast.{" "}
-          <a href="#contact" className="underline font-bold hover:opacity-80">
+          <a href="/instant-quote" className="underline font-bold hover:opacity-80">
             Get a free quote today
           </a>
           .

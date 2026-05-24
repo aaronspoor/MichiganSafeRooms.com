@@ -132,7 +132,7 @@ export default function BlogPostPage({ params }: Props) {
             fast install times, lifetime structural warranty.
           </p>
           <a
-            href="/#contact"
+            href="/instant-quote"
             className="inline-block bg-brand-accent text-white font-bold px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
           >
             Get a Free Quote

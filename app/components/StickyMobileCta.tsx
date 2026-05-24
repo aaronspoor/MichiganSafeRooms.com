@@ -24,7 +24,7 @@ export default function StickyMobileCta() {
         </p>
         <div className="flex gap-2 flex-1 justify-end">
           <a
-            href="#contact"
+            href="/instant-quote"
             className="bg-brand-accent text-white text-xs font-bold px-3 py-2 rounded-lg whitespace-nowrap"
           >
             Get a Free Quote

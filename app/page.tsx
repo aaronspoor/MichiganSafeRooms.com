@@ -197,7 +197,7 @@ export default function HomePage() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
             <a
-              href="#contact"
+              href="/instant-quote"
               className="bg-brand-accent hover:opacity-90 text-white font-bold px-10 py-4 rounded-lg transition-opacity text-lg"
             >
               Get a Free Quote
@@ -295,7 +295,11 @@ export default function HomePage() {
               Get a Free Quote
             </h2>
             <p className="text-gray-500 mt-3">
-              Fill out the form below and we&rsquo;ll be in touch within one business day.
+              Prefer instant pricing?{" "}
+              <a href="/instant-quote" className="text-brand-light font-semibold underline">
+                Use our instant quote tool
+              </a>
+              , or fill out the form below and we&rsquo;ll be in touch within one business day.
             </p>
           </div>
 

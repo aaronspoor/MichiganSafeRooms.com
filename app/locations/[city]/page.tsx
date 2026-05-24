@@ -131,7 +131,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             FEMA P-320 compliant steel safe rooms designed, fabricated, and installed in {cityName} and {countyName} County. One call — everything included.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" className="bg-brand-accent hover:opacity-90 text-white font-bold px-10 py-4 rounded-lg text-lg">
+            <a href="/instant-quote" className="bg-brand-accent hover:opacity-90 text-white font-bold px-10 py-4 rounded-lg text-lg">
               Get a Free Quote
             </a>
           </div>

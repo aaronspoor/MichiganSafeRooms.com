@@ -106,7 +106,7 @@ export default function RootLayout({
             {/* Right side: CTA */}
             <div className="flex items-center gap-4 shrink-0">
               <a
-                href="/#contact"
+                href="/instant-quote"
                 className="bg-brand-accent text-white px-4 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
               >
                 Get a Quote

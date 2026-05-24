@@ -1,27 +1,27 @@
 const TIERS = [
   {
-    name: "Small Safe Room",
+    name: "2-Bedroom",
+    size: "3.5×5 ft",
+    price: "$6,999",
+    capacity: "Fits up to 4 people",
+    popular: false,
+    features: ['1/4" A36 plate steel', "FEMA P-320 / P-361 rated", "Bolt-down installation"],
+  },
+  {
+    name: "3-Bedroom",
     size: "4×6 ft",
-    price: "Starting at $6,999",
-    capacity: "Ideal for 2–4 people",
-    popular: false,
-    features: ["Heavy-gauge steel construction", "FEMA P-320 rated", "Same-day installation"],
-  },
-  {
-    name: "Medium Safe Room",
-    size: "8×8 ft",
-    price: "Starting at $9,999",
-    capacity: "Most popular — fits 4–8 people",
+    price: "$7,999",
+    capacity: "Most popular — fits up to 6 people",
     popular: true,
-    features: ["Heavy-gauge steel construction", "FEMA P-320 rated", "Same-day installation"],
+    features: ['1/4" A36 plate steel', "FEMA P-320 / P-361 rated", "Bolt-down installation"],
   },
   {
-    name: "Large Safe Room",
-    size: "10×10 ft",
-    price: "Starting at $13,999",
-    capacity: "Family + neighbors — fits 8–12 people",
+    name: "4-Bedroom",
+    size: "4×8 ft",
+    price: "$8,999",
+    capacity: "Fits up to 8 people",
     popular: false,
-    features: ["Heavy-gauge steel construction", "FEMA P-320 rated", "Same-day installation"],
+    features: ['1/4" A36 plate steel', "FEMA P-320 / P-361 rated", "Bolt-down installation"],
   },
 ];
 
@@ -35,7 +35,7 @@ export default function PricingSection() {
             Pricing
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            All prices include design, fabrication, delivery, and professional installation. Free on-site quote — no obligation.
+            All prices include design, fabrication, delivery, and professional installation — and are priced to stay under the Michigan rebate benefit cap. Larger or specialty installs get a free custom quote.
           </p>
         </div>
 
@@ -75,12 +75,12 @@ export default function PricingSection() {
                 ))}
               </ul>
               <a
-                href="#contact"
+                href="/instant-quote"
                 className={`block text-center font-bold py-3 px-6 rounded-lg transition-opacity hover:opacity-90 ${
                   tier.popular ? "bg-brand-accent text-white" : "bg-brand text-white"
                 }`}
               >
-                Get a Quote
+                Get Instant Quote
               </a>
             </div>
           ))}
