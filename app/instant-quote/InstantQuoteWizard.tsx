@@ -346,11 +346,10 @@ export default function InstantQuoteWizard() {
         {step === 3 && (
           <fieldset>
             <legend className="font-heading text-2xl font-extrabold uppercase text-brand mb-1">
-              A few site details
+              Installation details
             </legend>
             <p className="text-sm text-gray-500 mb-5">
-              These help us give you an accurate number. Don&apos;t worry if you&apos;re unsure —
-              we&apos;ll verify on site.
+              These help us prepare an accurate quote. If you&apos;re unsure, choose “Not sure”; we may ask for a photo or measurement by email.
             </p>
 
             <p className={labelCls}>Is there an existing concrete slab?</p>
@@ -443,7 +442,7 @@ export default function InstantQuoteWizard() {
 
             {answers.floodZone === "yes" && answers.location === "exterior_buried" && (
               <p className="mt-4 text-sm text-amber-800 bg-amber-50 border border-brand-accent rounded-lg p-3">
-                We’ll review flood-zone conditions and installation requirements during the site consultation.
+                We’ll account for flood-zone considerations using the details you provide and may request more information by email.
               </p>
             )}
           </fieldset>
@@ -479,7 +478,7 @@ export default function InstantQuoteWizard() {
               Your contact information
             </legend>
             <p className="text-sm text-gray-500 mb-5">
-              We&apos;ll email your quote here and reach out to schedule a free site visit.
+              We&apos;ll email your quote here. If we need more information, we&apos;ll follow up by email.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -796,9 +795,9 @@ function ReviewStep({
       )}
 
       <p className="text-xs text-gray-500 leading-relaxed">
-        This estimate is based on the information you provided and assumes standard site
-        conditions. Final pricing is confirmed after a site visit. Quote valid for 30 days from
-        issue. Our design and installation process uses applicable FEMA safe-room guidance as a
+        This quote is based on the information you provided and assumes standard installation
+        conditions. If photos or measurements are needed to confirm a custom scope, we’ll request
+        them by email. Quote valid for 30 days from issue. Our design and installation process uses applicable FEMA safe-room guidance as a
         reference. FEMA does not certify or endorse individual contractors or products.
       </p>
 

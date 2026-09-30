@@ -34,7 +34,7 @@ function buildSiteNotes(answers: QuizAnswers): string[] {
   const notes: string[] = [];
   if (answers.floodZone === "yes") {
     notes.push(
-      "The property is in a mapped flood zone. We’ll review site conditions and installation requirements during the consultation."
+      "The property is in a mapped flood zone. We’ll prepare the quote using the details you provide and may request additional information by email."
     );
   }
   return notes;
@@ -50,10 +50,10 @@ export function calculateQuote(answers: QuizAnswers): QuoteResult {
     return {
       isCustom: true,
       reason:
-        "This installation type (basement, exterior, or buried) is built to order. We'll prepare a tailored custom quote after reviewing your site.",
+        "This installation type (basement, exterior, or buried) is built to order. We'll prepare a tailored quote from the project details you submit and may request photos or measurements by email.",
       recommendedSizeNote: shelter
         ? `Based on your household, we'd recommend around a ${shelter.name}.`
-        : "We'll size your shelter during the site visit.",
+        : "We may request household or space details by email to size your custom shelter.",
       siteNotes,
     };
   }
@@ -62,10 +62,10 @@ export function calculateQuote(answers: QuizAnswers): QuoteResult {
     return {
       isCustom: true,
       reason:
-        "Your site needs a new or thickened reinforced concrete pad before anchoring. We'll include that in a custom quote after a site visit.",
+        "Your project needs a new or thickened reinforced concrete pad before anchoring. We'll account for that in a custom quote using the details you provide, and may request photos or measurements by email.",
       recommendedSizeNote: shelter
         ? `Based on your household, we'd recommend around a ${shelter.name}.`
-        : "We'll size your shelter during the site visit.",
+        : "We may request household or space details by email to size your custom shelter.",
       siteNotes,
     };
   }

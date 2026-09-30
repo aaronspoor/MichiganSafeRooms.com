@@ -34,7 +34,7 @@ export function renderInstantQuoteEmail(
   let quoteBlock: string;
   if (quote.isCustom) {
     quoteBlock = `
-      <h2 style="font-size:16px;margin:24px 0 10px;color:${NAVY};">Your Custom Quote Is On The Way</h2>
+      <h2 style="font-size:16px;margin:24px 0 10px;color:${NAVY};">Custom Quote Request Received</h2>
       <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:18px 20px;margin:0 0 16px;color:#374151;">
         <p style="margin:0 0 10px;">${esc(quote.reason)}</p>
         <p style="margin:0;color:#6b7280;font-size:13px;">${esc(quote.recommendedSizeNote)}</p>
@@ -63,6 +63,13 @@ export function renderInstantQuoteEmail(
       ${notes}`;
   }
 
+  const emailIntro = quote.isCustom
+    ? "Thanks for requesting a custom quote. We’ll review the project details you submitted."
+    : "Thanks for using our instant quote tool. Here’s your tailored estimate.";
+  const nextSteps = quote.isCustom
+    ? "<li>Aaron will review your details and email a written quote within 1 business day.</li><li>If photos or measurements are needed to confirm a custom scope, we’ll request them by email.</li><li>Once you approve the quote, we can coordinate an installation date.</li>"
+    : `<li>This estimate is based on the details you provided and is valid through ${esc(meta.validThrough)}.</li><li>If any additional details are needed, we’ll request them by email.</li><li>Once you approve the quote, we can coordinate an installation date.</li>`;
+
   return `
   <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#111;">
     <div style="background:${NAVY};padding:24px 32px;border-radius:8px 8px 0 0;">
@@ -71,7 +78,7 @@ export function renderInstantQuoteEmail(
     </div>
     <div style="height:5px;background:${AMBER};"></div>
     <div style="background:#f9fafb;padding:32px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 8px 8px;">
-      <p style="margin:0 0 16px;">Hi ${esc(answers.firstName)}, thanks for using our instant quote tool. Here's your tailored Michigan Safe Rooms estimate.</p>
+      <p style="margin:0 0 16px;">Hi ${esc(answers.firstName)}, ${emailIntro}</p>
 
       <table style="width:100%;border-collapse:collapse;font-size:14px;color:#374151;">
         <tr><td style="${tdLabel}">Quote number</td><td style="${td}">${esc(meta.quoteNumber)}</td></tr>
@@ -89,11 +96,7 @@ export function renderInstantQuoteEmail(
       </div>
 
       <h3 style="font-size:15px;margin:0 0 10px;color:${NAVY};">What Happens Next</h3>
-      <ol style="padding-left:20px;line-height:1.9;color:#374151;margin:0 0 20px;">
-        <li>Aaron will reach out within 1 business day to schedule a free site visit.</li>
-        <li>The site visit confirms final pricing. This quote is an estimate based on the information you provided.</li>
-        <li>After you review the final scope and price, we can coordinate an installation date.</li>
-      </ol>
+      <ol style="padding-left:20px;line-height:1.9;color:#374151;margin:0 0 20px;">${nextSteps}</ol>
 
       <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;" />
 

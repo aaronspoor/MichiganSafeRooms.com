@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Steel Safe Rooms in Michigan | Free Quote",
     description:
-      "Michigan's dedicated safe room installer. Steel safe rooms designed using applicable FEMA safe-room guidance. Same-day installation. Free consultation.",
+      "Michigan's dedicated safe room installer. Steel safe rooms designed using applicable FEMA safe-room guidance. Same-day installation. Request a free written quote.",
     url: "https://michigansaferooms.com",
     // TODO: Replace with real OG image once photography is complete
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Michigan Safe Rooms Installation" }],
@@ -47,12 +47,12 @@ const FAQ_ITEMS = [
   {
     question: "Do I need a permit to install a safe room?",
     answer:
-      "Permit requirements vary by municipality. In many Michigan jurisdictions, above-ground safe rooms installed in an existing garage or basement require only a basic building permit. We'll walk you through the process for your area during your free consultation.",
+      "Permit requirements vary by municipality. Share your project address when requesting a quote, and we’ll include the permit information we can confirm for your area.",
   },
   {
     question: "How much does a safe room cost?",
     answer:
-      "Our shelters start at $7,000. Final pricing depends on size, site conditions, and any custom options. All quotes are free with no obligation.",
+      "Our shelters start at $7,000. Pricing depends on the size, installation location, and options you include in your quote request. Written quotes are free with no obligation.",
   },
   {
     question: "What FEMA guidance informs your shelters?",
@@ -72,7 +72,7 @@ const FAQ_ITEMS = [
   {
     question: "Can a safe room be installed in a garage?",
     answer:
-      "Absolutely — the garage is actually one of the most popular and practical locations for a safe room. It provides easy access from the home, usually has a concrete slab that allows for secure anchoring, and keeps the unit out of your living space entirely. We assess your garage during the free consultation and recommend the best placement.",
+      "Absolutely — a garage is a popular and practical location for a safe room. It provides easy access from the home, often has a concrete slab for anchoring, and keeps the unit out of your living space. Include the garage layout and a few photos with your quote request, and we can recommend placement based on the information you provide.",
   },
   {
     question: "What makes Michigan Safe Rooms different from national companies?",
@@ -228,13 +228,13 @@ export default function HomePage() {
             {[
               {
                 step: "01",
-                title: "Free Consultation",
-                body: "We discuss your home, walk through your options, and answer every question — at no cost and with no obligation. Getting started is as simple as a conversation.",
+                title: "Request a Written Quote",
+                body: "Send us your preferred shelter size, installation location, and project details through the quote form. We’ll review your information and email a written quote; if we need photos or measurements, we’ll request them by email.",
               },
               {
                 step: "02",
-                title: "Deposit & Installation Scheduled",
-                body: "We collect a deposit and coordinate everything needed on our end and yours — permits, site prep details, and scheduling — so your install day goes smoothly.",
+                title: "Approve & Schedule",
+                body: "Once you approve the quote and deposit, we’ll coordinate permits, preparation details, and an installation date.",
               },
               {
                 step: "03",

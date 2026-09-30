@@ -21,7 +21,7 @@ const CITIES: Record<string, {
     cityName: "Flint",
     countyName: "Genesee",
     tornadoRiskNote: "Genesee County has a documented history of tornado activity, including damaging storms that have affected residential neighborhoods in and around Flint. The flat terrain of mid-Michigan provides little natural barrier against severe weather systems tracking northeast across the state.",
-    permitNote: "Flint and Genesee County municipalities generally require a building permit for safe room installations. We coordinate permit requirements for your specific address during the free consultation.",
+    permitNote: "Permit requirements vary across Flint and Genesee County. Share your project address in the quote form, and we’ll include the requirements we can confirm for your municipality.",
     neighborhoodList: ["Grand Blanc", "Burton", "Flushing", "Davison", "Mt. Morris", "Swartz Creek", "Linden"],
   },
   "grand-rapids": {
@@ -63,7 +63,7 @@ const CITIES: Record<string, {
     cityName: "Holland",
     countyName: "Ottawa",
     tornadoRiskNote: "Ottawa County and the Holland area see regular severe weather activity. Lake Michigan can both suppress and enhance storm systems depending on the season, and the region has recorded multiple tornado events including significant EF1 and EF2 touchdowns in residential areas.",
-    permitNote: "Holland, Zeeland, and Ottawa County municipalities each have their own permit requirements for safe room installations. We confirm requirements for your address during the free site visit.",
+    permitNote: "Holland, Zeeland, and Ottawa County each have their own permit requirements. Share your project address in the quote form, and we’ll include the requirements we can confirm for your municipality.",
     neighborhoodList: ["Zeeland", "West Olive", "Hudsonville", "Jenison", "Park Township", "Fillmore Township"],
   },
   muskegon: {

@@ -48,10 +48,10 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="font-heading text-3xl font-extrabold uppercase text-brand mb-3">
-          Message Received
+          Quote Request Received
         </h3>
         <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">
-          Thanks — we&rsquo;ll be in touch within one business day.
+          Thanks — we&rsquo;ll review your details and email a written quote within one business day. If we need more information, we&rsquo;ll ask by email.
         </p>
       </div>
     );
@@ -78,13 +78,12 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="phone">
-            Phone Number *
+            Phone Number (optional)
           </label>
           <input
             id="phone"
             name="phone"
             type="tel"
-            required
             placeholder="(555) 555-5555"
             className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand"
           />
@@ -143,25 +142,9 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          placeholder="Anything you'd like us to know before we reach out..."
+          placeholder="Share dimensions, installation details, or other information for your quote."
           className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand resize-none"
         />
-      </div>
-
-      <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="callTime">
-          Best Time to Call
-        </label>
-        <select
-          id="callTime"
-          name="callTime"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand bg-white"
-        >
-          <option value="">— Select a time —</option>
-          <option value="morning">Morning (8am–12pm)</option>
-          <option value="afternoon">Afternoon (12pm–5pm)</option>
-          <option value="evening">Evening (5pm–8pm)</option>
-        </select>
       </div>
 
       {error && (
@@ -175,10 +158,10 @@ export default function ContactForm() {
         disabled={submitting}
         className="w-full bg-brand-accent hover:opacity-90 disabled:opacity-60 text-white font-bold py-4 rounded-lg text-lg transition-opacity"
       >
-        {submitting ? "Sending…" : "Request My Free On-Site Consultation"}
+        {submitting ? "Sending…" : "Request My Free Written Quote"}
       </button>
       <p className="text-center text-xs text-gray-400 mt-2">
-        We respond within 1 business day. No spam, no pressure.
+        We email quotes within 1 business day. No spam, no pressure.
       </p>
       <p className="text-center text-xs text-gray-400">
         Your info is never shared or sold.

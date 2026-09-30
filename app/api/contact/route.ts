@@ -12,11 +12,11 @@ function esc(str: unknown): string {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, email, address, interest, message, callTime } = body;
+    const { name, phone, email, address, interest, message } = body;
 
-    if (!name || !phone || !email) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: "Name, phone, and email are required." },
+        { error: "Name and email are required." },
         { status: 400 }
       );
     }
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
             </tr>
             <tr>
               <td style="padding: 8px 12px; background: #f8f9fa; font-weight: 600; border: 1px solid #e5e7eb;">Phone</td>
-              <td style="padding: 8px 12px; border: 1px solid #e5e7eb;">${esc(phone)}</td>
+              <td style="padding: 8px 12px; border: 1px solid #e5e7eb;">${esc(phone) || "—"}</td>
             </tr>
             <tr>
               <td style="padding: 8px 12px; background: #f8f9fa; font-weight: 600; border: 1px solid #e5e7eb;">Email</td>
@@ -60,10 +60,7 @@ export async function POST(request: NextRequest) {
               <td style="padding: 8px 12px; background: #f8f9fa; font-weight: 600; border: 1px solid #e5e7eb; vertical-align: top;">Message</td>
               <td style="padding: 8px 12px; border: 1px solid #e5e7eb; white-space: pre-wrap;">${esc(message) || "—"}</td>
             </tr>
-            <tr>
-              <td style="padding: 8px 12px; background: #f8f9fa; font-weight: 600; border: 1px solid #e5e7eb;">Best Time to Call</td>
-              <td style="padding: 8px 12px; border: 1px solid #e5e7eb;">${esc(callTime) || "—"}</td>
-            </tr>
+
           </table>
           <p style="margin-top: 24px; color: #6b7280; font-size: 13px;">
             Hit Reply to respond directly to ${esc(name)} at ${esc(email)}.
