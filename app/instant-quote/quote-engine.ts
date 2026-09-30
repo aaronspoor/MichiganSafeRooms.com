@@ -5,14 +5,7 @@ import type {
   QuoteResult,
 } from "./types";
 
-// ─────────────────────────────────────────────────────────────
-// TODO: Aaron — tune these numbers before launch.
-// Strategy: every auto-priced quote MUST stay under the $9,509
-// Michigan rebate benefit cap so a FEMA Benefit-Cost Analysis (BCA)
-// is never required. Anything that can't be priced under the cap, or
-// isn't a standard above-ground interior install on an existing slab,
-// routes to a manual custom quote instead of emitting a number.
-// ─────────────────────────────────────────────────────────────
+// Standard line pricing. Site-specific work routes to a custom quote.
 export const SHELTERS: Record<string, ShelterModel> = {
   TIER_2BR: { id: "tier_2br", name: "3.5' × 5' Safe Room", sqFt: 17.5, basePrice: 6999 },
   TIER_3BR: { id: "tier_3br", name: "4' × 6' Safe Room", sqFt: 24, basePrice: 7999 },
@@ -22,11 +15,6 @@ export const SHELTERS: Record<string, ShelterModel> = {
 const ADA_DOOR = 500; // 36" wheelchair-accessible clear opening
 const INTERIOR_NEW_COORD = 250; // new-construction coordination charge
 const VETERAN_DISCOUNT_PCT = 0.1;
-
-// Michigan MSP/EMHSD rebate program
-const REBATE_BENEFIT_CAP = 9509; // above this, a FEMA BCA is required
-const REBATE_MAX = 7131.75; // 75% of the benefit cap
-// ─────────────────────────────────────────────────────────────
 
 // Only these locations are auto-priced (above-ground, interior, on a slab).
 const AUTO_PRICE_LOCATIONS = new Set(["garage_existing", "interior_new"]);
@@ -42,19 +30,19 @@ export function recommendSize(
   return null; // larger than our standard line → custom quote
 }
 
-function buildRebateFlags(answers: QuizAnswers): string[] {
-  const flags: string[] = [];
+function buildSiteNotes(answers: QuizAnswers): string[] {
+  const notes: string[] = [];
   if (answers.floodZone === "yes") {
-    flags.push(
-      "Property is in a FEMA flood zone — rebate eligibility depends on the specific zone designation. Floodways, Zone VE, and Coastal A Zones disqualify; placement within a Special Flood Hazard Area is restricted."
+    notes.push(
+      "The property is in a mapped flood zone. We’ll review site conditions and installation requirements during the consultation."
     );
   }
-  return flags;
+  return notes;
 }
 
 export function calculateQuote(answers: QuizAnswers): QuoteResult {
   const mobility = answers.mobilityNeeds === "yes";
-  const rebateFlags = buildRebateFlags(answers);
+  const siteNotes = buildSiteNotes(answers);
   const shelter = recommendSize(answers.occupants, mobility);
 
   // ── Custom-quote routing ──────────────────────────────────
@@ -66,7 +54,7 @@ export function calculateQuote(answers: QuizAnswers): QuoteResult {
       recommendedSizeNote: shelter
         ? `Based on your household, we'd recommend around a ${shelter.name}.`
         : "We'll size your shelter during the site visit.",
-      rebateFlags,
+      siteNotes,
     };
   }
 
@@ -78,7 +66,7 @@ export function calculateQuote(answers: QuizAnswers): QuoteResult {
       recommendedSizeNote: shelter
         ? `Based on your household, we'd recommend around a ${shelter.name}.`
         : "We'll size your shelter during the site visit.",
-      rebateFlags,
+      siteNotes,
     };
   }
 
@@ -88,7 +76,7 @@ export function calculateQuote(answers: QuizAnswers): QuoteResult {
       reason:
         "Your household needs a shelter larger than our standard line. We'll prepare a custom quote sized for your family.",
       recommendedSizeNote: "Larger than a 4' × 8' unit — sized on a custom basis.",
-      rebateFlags,
+      siteNotes,
     };
   }
 
@@ -116,24 +104,6 @@ export function calculateQuote(answers: QuizAnswers): QuoteResult {
     : 0;
   const total = subtotal - veteranDiscount;
 
-  // Safety net: never emit an auto price that would trip the BCA threshold.
-  if (total > REBATE_BENEFIT_CAP) {
-    return {
-      isCustom: true,
-      reason:
-        "Your configuration runs above the standard rebate benefit cap, so we'll prepare a custom quote to keep your rebate paperwork simple.",
-      recommendedSizeNote: `Based on your household, we'd recommend around a ${shelter.name}.`,
-      rebateFlags,
-    };
-  }
-
-  const rebateEligibleAmount = Math.min(total, REBATE_BENEFIT_CAP);
-  const estimatedRebate =
-    answers.rebateIntent === "applying_rebate"
-      ? Math.min(rebateEligibleAmount * 0.75, REBATE_MAX)
-      : 0;
-  const netOutOfPocket = total - estimatedRebate;
-
   return {
     isCustom: false,
     shelter,
@@ -141,10 +111,7 @@ export function calculateQuote(answers: QuizAnswers): QuoteResult {
     subtotal,
     veteranDiscount,
     total,
-    estimatedRebate,
-    netOutOfPocket,
-    requiresBCA: false, // auto-priced quotes are always under the cap
-    rebateFlags,
+    siteNotes,
   };
 }
 

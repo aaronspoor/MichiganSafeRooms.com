@@ -97,10 +97,6 @@ export default function RootLayout({
               <a href="/#faq" className="hover:text-white transition-colors">FAQ</a>
               <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
               <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-              <Link href="/grant" className="hover:text-white transition-colors flex items-center gap-1.5">
-                Grant Program
-                <span className="bg-green-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold leading-none">NEW</span>
-              </Link>
             </nav>
 
             {/* Right side: CTA */}
@@ -132,7 +128,7 @@ export default function RootLayout({
                 <span className="text-white font-heading font-bold text-lg tracking-wide">Michigan Safe Rooms</span>
               </div>
               <p className="text-gray-400 leading-relaxed mb-3 text-xs">
-                Protecting Michigan families with premium FEMA-compliant steel safe rooms. Fast installs across lower Michigan.
+                Protecting Michigan families with steel safe rooms designed using applicable FEMA safe-room guidance.
               </p>
             </div>
 
@@ -145,7 +141,6 @@ export default function RootLayout({
                 <li><a href="/#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="/#faq" className="hover:text-white transition-colors">FAQ</a></li>
                 <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="/grant" className="hover:text-white transition-colors">Grant Program</Link></li>
                 <li><a href="/#contact" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
@@ -178,10 +173,8 @@ export default function RootLayout({
               <p className="text-white font-semibold mb-3">Our Credentials</p>
               <ul className="space-y-3">
                 {[
-                  "FEMA P-320 Compliant",
-                  "ICC-500 Rated",
+                  "FEMA guidance informs our design approach",
                   "Licensed & Insured",
-                  "Fully Insured",
                   "Lifetime Structural Warranty",
                 ].map((badge) => (
                   <li key={badge} className="flex items-center gap-2 text-xs">

@@ -15,7 +15,6 @@ const LOCATIONS = [
   "exterior_above",
   "exterior_buried",
 ];
-const REBATE_INTENTS = ["applying_rebate", "not_applying", "learning_more"];
 
 // Manual validation — returns an error string, or null if valid.
 function validate(a: Partial<QuizAnswers>): string | null {
@@ -31,7 +30,6 @@ function validate(a: Partial<QuizAnswers>): string | null {
     "location",
     "hasConcreteSlab",
     "floodZone",
-    "rebateIntent",
     "mobilityNeeds",
   ];
   for (const k of required) {
@@ -42,7 +40,6 @@ function validate(a: Partial<QuizAnswers>): string | null {
     return "Invalid occupants count";
   if (typeof a.bedrooms !== "number" || a.bedrooms < 1) return "Invalid bedrooms";
   if (!LOCATIONS.includes(String(a.location))) return "Invalid location";
-  if (!REBATE_INTENTS.includes(String(a.rebateIntent))) return "Invalid rebate intent";
   if (!/^\d{5}$/.test(String(a.zip))) return "Invalid ZIP code";
   return null;
 }
@@ -99,7 +96,6 @@ export async function POST(request: NextRequest) {
     has_concrete_slab: answers.hasConcreteSlab,
     slab_thickness: answers.slabThickness ?? null,
     flood_zone: answers.floodZone,
-    rebate_intent: answers.rebateIntent,
     veteran: !!answers.veteran,
     recommended_size: quote.isCustom ? "Custom" : quote.shelter.name,
     recommended_sqft: quote.isCustom ? 0 : quote.shelter.sqFt,
@@ -107,10 +103,12 @@ export async function POST(request: NextRequest) {
     subtotal: quote.isCustom ? 0 : quote.subtotal,
     veteran_discount: quote.isCustom ? 0 : quote.veteranDiscount,
     total: quote.isCustom ? 0 : quote.total,
-    estimated_rebate: quote.isCustom ? 0 : quote.estimatedRebate,
-    net_out_of_pocket: quote.isCustom ? 0 : quote.netOutOfPocket,
-    requires_bca: quote.isCustom ? false : quote.requiresBCA,
-    rebate_flags: quote.rebateFlags,
+    // Retain no-rebate values for compatibility with existing quote rows and RPC schema.
+    rebate_intent: "not_applying",
+    estimated_rebate: 0,
+    net_out_of_pocket: quote.isCustom ? 0 : quote.total,
+    requires_bca: false,
+    rebate_flags: quote.siteNotes,
   };
 
   const { data: quoteNumber, error: dbError } = await supabase.rpc(

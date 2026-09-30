@@ -10,7 +10,6 @@ export type ShelterLocation =
 export type HasConcreteSlab = "yes" | "no" | "not_sure";
 export type SlabThickness = "ge_4" | "lt_4" | "not_sure";
 export type FloodZone = "no" | "yes" | "unknown";
-export type RebateIntent = "applying_rebate" | "not_applying" | "learning_more";
 
 export interface QuizAnswers {
   // Step 1 — household
@@ -27,8 +26,7 @@ export interface QuizAnswers {
   zipCode: string;
   floodZone: FloodZone;
 
-  // Step 4 — rebate
-  rebateIntent: RebateIntent;
+  // Step 4 — optional veteran discount
   veteran: boolean;
 
   // Step 5 — contact
@@ -65,17 +63,14 @@ export interface PricedQuote {
   subtotal: number;
   veteranDiscount: number;
   total: number;
-  estimatedRebate: number;
-  netOutOfPocket: number;
-  requiresBCA: boolean;
-  rebateFlags: string[];
+  siteNotes: string[];
 }
 
 export interface CustomQuote {
   isCustom: true;
   reason: string;
   recommendedSizeNote: string;
-  rebateFlags: string[];
+  siteNotes: string[];
 }
 
 export type QuoteResult = PricedQuote | CustomQuote;

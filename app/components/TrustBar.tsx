@@ -1,13 +1,12 @@
 export default function TrustBar() {
   const items = [
-    "FEMA P-320 Compliant",
-    "ICC-500 Rated",
+    "FEMA guidance informs our design approach",
     "Licensed & Insured",
     "Lifetime Structural Warranty",
   ];
   return (
     <div className="bg-gray-50 border-b border-gray-200 py-2 px-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-0">
         {items.map((item) => (
           <div key={item} className="flex items-center justify-center gap-1.5 text-[13px] text-gray-600 font-medium py-1">
             <svg className="w-3.5 h-3.5 text-brand-accent shrink-0" viewBox="0 0 20 20" fill="currentColor">

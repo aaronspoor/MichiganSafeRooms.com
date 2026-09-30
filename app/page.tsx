@@ -3,31 +3,29 @@ import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/posts";
 import FaqAccordion from "@/app/components/FaqAccordion";
 import ContactForm from "@/app/components/ContactForm";
-import TestimonialsSection from "@/app/components/TestimonialsSection";
 import AboutSection from "@/app/components/AboutSection";
 import PricingSection from "@/app/components/PricingSection";
-import GrantBanner from "@/app/components/GrantBanner";
 
 export const metadata: Metadata = {
-  title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer | Free Quote — Michigan Safe Rooms",
+  title: "Steel Safe Rooms in Michigan | Free Quote — Michigan Safe Rooms",
   description:
-    "Michigan's dedicated safe room installer. We design, fabricate & install FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation. Free quote — no obligation.",
+    "Michigan's dedicated safe room installer. We design and install steel safe rooms using applicable FEMA safe-room guidance across lower Michigan. Same-day installation. Free quote — no obligation.",
   alternates: {
     canonical: "https://michigansaferooms.com",
   },
   openGraph: {
-    title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer | Free Quote",
+    title: "Steel Safe Rooms in Michigan | Free Quote",
     description:
-      "Michigan's dedicated safe room installer. FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation. Free consultation.",
+      "Michigan's dedicated safe room installer. Steel safe rooms designed using applicable FEMA safe-room guidance. Same-day installation. Free consultation.",
     url: "https://michigansaferooms.com",
     // TODO: Replace with real OG image once photography is complete
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Michigan Safe Rooms Installation" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Steel Safe Rooms Michigan | FEMA-Compliant Installer",
+    title: "Steel Safe Rooms in Michigan",
     description:
-      "Michigan's dedicated safe room installer. FEMA P-320 compliant. EF5-rated. Same-day installation. Free quote — no obligation.",
+      "Michigan's dedicated safe room installer. Steel safe rooms designed using applicable FEMA safe-room guidance. Free quote — no obligation.",
     // TODO: Replace with real Twitter card image
     images: ["/og-image.jpg"],
   },
@@ -39,7 +37,7 @@ const FAQ_ITEMS = [
   {
     question: "What are your safe rooms made of?",
     answer:
-      "Our shelters are constructed from heavy-gauge structural steel panels, bolted together for a rock-solid enclosure that meets or exceeds FEMA P-320 standards for wind load and debris impact.",
+      "Our shelters are constructed from heavy-gauge structural steel panels, bolted together for a durable enclosure. Our design and installation process uses applicable FEMA safe-room guidance as a reference.",
   },
   {
     question: "How long does installation take?",
@@ -57,9 +55,9 @@ const FAQ_ITEMS = [
       "Our shelters start at $7,000. Final pricing depends on size, site conditions, and any custom options. All quotes are free with no obligation.",
   },
   {
-    question: "Are your shelters FEMA rated?",
+    question: "What FEMA guidance informs your shelters?",
     answer:
-      "Every Michigan Safe Rooms unit is engineered to meet FEMA P-320 standards, which specify performance requirements for safe rooms against extreme wind events.",
+      "Our design and installation process uses applicable FEMA safe-room guidance as a reference. FEMA does not certify or endorse individual contractors or products. Ask us about the specifications and documentation available for the shelter you are considering.",
   },
   {
     question: "What areas of Michigan do you serve?",
@@ -70,11 +68,6 @@ const FAQ_ITEMS = [
     question: "Do you offer financing?",
     answer:
       "We want to make sure cost isn't a barrier to protecting your family. Contact us to discuss your situation and we'll work with you on timing and payment.",
-  },
-  {
-    question: "What is a FEMA hazard mitigation grant and do I qualify?",
-    answer:
-      "FEMA's Hazard Mitigation Grant Program (HMGP) and Flood Mitigation Assistance (FMA) programs can cover up to 75% of safe room installation costs for qualifying homeowners in declared disaster areas. Michigan has been an active participant in these programs. Eligibility depends on your county and current grant cycles — ask us when you call and we'll point you toward the right resources.",
   },
   {
     question: "Can a safe room be installed in a garage?",
@@ -98,7 +91,6 @@ export default function HomePage() {
 
   return (
     <>
-      <GrantBanner />
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -127,7 +119,7 @@ export default function HomePage() {
               ],
               openingHours: "Mo-Fr 08:00-18:00",
               description:
-                "Michigan's dedicated safe room installer. FEMA P-320 compliant steel safe rooms across lower Michigan. EF5-rated. Same-day installation.",
+                "Michigan's dedicated safe room installer. Steel safe rooms designed using applicable FEMA safe-room guidance. Same-day installation.",
               priceRange: "$$$",
             },
             {
@@ -141,7 +133,7 @@ export default function HomePage() {
               },
               areaServed: "Lower Michigan",
               description:
-                "Professional design, fabrication, and installation of FEMA P-320 compliant steel safe rooms for Michigan homeowners. EF5-rated against 250 MPH winds.",
+                "Professional design, fabrication, and installation of steel safe rooms for Michigan homeowners. Our process uses applicable FEMA safe-room guidance as a reference.",
               serviceType: "Safe Room Installation",
             },
             {
@@ -186,7 +178,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-brand-accent text-sm font-bold uppercase tracking-widest mb-4">
-            EF5-Rated | 250 MPH Tested | FEMA Compliant
+            Designed using applicable FEMA safe-room guidance
           </p>
 
           {/* Subhead */}
@@ -263,8 +255,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <TestimonialsSection />
 
       <PricingSection />
 

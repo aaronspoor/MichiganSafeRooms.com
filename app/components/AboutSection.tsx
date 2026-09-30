@@ -1,6 +1,6 @@
 export default function AboutSection() {
   const stats = [
-    "100% FEMA Compliant Installs",
+    "FEMA guidance informs our designs",
     "Same-Day Installation",
     "Lifetime Structural Warranty",
   ];

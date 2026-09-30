@@ -12,7 +12,6 @@ const base: QuizAnswers = {
   slabThickness: "ge_4",
   zipCode: "48429",
   floodZone: "no",
-  rebateIntent: "not_applying",
   veteran: false,
   firstName: "Test",
   lastName: "User",
@@ -31,7 +30,6 @@ test("minimum 1-bedroom (2 occupants) auto-prices the 3.5x5 tier at $6,999", () 
   if (q.isCustom) return;
   assert.equal(q.shelter.basePrice, 6999);
   assert.equal(q.total, 6999);
-  assert.equal(q.estimatedRebate, 0);
 });
 
 test("3-bedroom (6 occupants) auto-prices the 4x6 tier at $7,999", () => {
@@ -49,13 +47,17 @@ test("veteran case applies a 10% discount", () => {
   assert.equal(q.total, 6299);
 });
 
-test("rebate-applying case returns 75% rebate and net out-of-pocket", () => {
-  const q = calculateQuote({ ...base, rebateIntent: "applying_rebate" });
+test("standard quotes above the former rebate cap still return an estimate", () => {
+  const q = calculateQuote({
+    ...base,
+    bedrooms: 3,
+    occupants: 6,
+    mobilityNeeds: "yes",
+    location: "interior_new",
+  });
   assert.equal(q.isCustom, false);
   if (q.isCustom) return;
-  assert.equal(q.estimatedRebate, 6999 * 0.75); // 5249.25
-  assert.equal(q.netOutOfPocket, 6999 - 6999 * 0.75);
-  assert.equal(q.requiresBCA, false); // always under the cap
+  assert.equal(q.total, 9749);
 });
 
 test("4-bedroom with ADA needs ledger > 4x8 and routes to a custom quote", () => {
@@ -84,7 +86,10 @@ test("basement install routes to a custom quote", () => {
   assert.equal(q.isCustom, true);
 });
 
-test("flood-zone answer surfaces a rebate flag", () => {
+test("flood-zone answer adds a site-review note without changing price", () => {
   const q = calculateQuote({ ...base, floodZone: "yes" });
-  assert.ok(q.rebateFlags.some((f) => f.toLowerCase().includes("flood zone")));
+  assert.equal(q.isCustom, false);
+  if (q.isCustom) return;
+  assert.equal(q.total, 6999);
+  assert.ok(q.siteNotes.some((note) => note.toLowerCase().includes("flood zone")));
 });

@@ -77,7 +77,6 @@ export default function InstantQuoteWizard() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [showRebateModal, setShowRebateModal] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [result, setResult] = useState<{
     quoteNumber: string;
@@ -105,9 +104,6 @@ export default function InstantQuoteWizard() {
         e.slabThickness = "Please choose the slab thickness.";
       if (!/^\d{5}$/.test(answers.zipCode ?? "")) e.zipCode = "Enter a 5-digit ZIP code.";
       if (!answers.floodZone) e.floodZone = "Please choose an option.";
-    }
-    if (s === 4) {
-      if (!answers.rebateIntent) e.rebateIntent = "Please choose an option.";
     }
     if (s === 5) {
       if (!answers.firstName?.trim()) e.firstName = "Required.";
@@ -140,7 +136,6 @@ export default function InstantQuoteWizard() {
   }
 
   async function doSubmit() {
-    setShowRebateModal(false);
     setSubmitting(true);
     setSubmitError(null);
     try {
@@ -171,11 +166,7 @@ export default function InstantQuoteWizard() {
       setStep(5);
       return;
     }
-    if (answers.rebateIntent === "applying_rebate") {
-      setShowRebateModal(true);
-    } else {
-      doSubmit();
-    }
+    doSubmit();
   }
 
   // ── Success screen ──────────────────────────────────────────
@@ -211,23 +202,10 @@ export default function InstantQuoteWizard() {
               <li>
                 <strong>Estimated total:</strong> {formatCurrency(q.total)}
               </li>
-              {answers.rebateIntent === "applying_rebate" && (
-                <li>
-                  <strong>Net after estimated rebate:</strong>{" "}
-                  {formatCurrency(q.netOutOfPocket)}
-                </li>
-              )}
             </ul>
           )}
         </div>
 
-        {answers.rebateIntent === "applying_rebate" && (
-          <p className="text-sm text-amber-800 bg-amber-50 border border-brand-accent rounded-lg p-4 mb-6 text-left">
-            <strong>Reminder:</strong> Do not sign a contract or pay a deposit until your
-            Michigan rebate application is approved with written notice to proceed — doing so
-            makes you permanently ineligible.
-          </p>
-        )}
 
         <a
           href="tel:+19896277291"
@@ -275,8 +253,7 @@ export default function InstantQuoteWizard() {
               How many people need protection?
             </legend>
             <p className="text-sm text-gray-500 mb-5">
-              Michigan&apos;s FEMA-based sizing rule assumes 2 occupants per bedroom. We use this
-              to recommend the right shelter size.
+              We use household size and accessibility needs to recommend a shelter size.
             </p>
 
             <p className={labelCls}>Bedrooms in your home</p>
@@ -346,8 +323,7 @@ export default function InstantQuoteWizard() {
               Where will the safe room be installed?
             </legend>
             <p className="text-sm text-gray-500 mb-5">
-              FEMA-compliant safe rooms can go in several locations. The placement affects price
-              and anchoring method.
+              Safe rooms can go in several locations. Placement affects price and anchoring method.
             </p>
             <div className="space-y-2">
               {LOCATION_OPTIONS.map((o) => (
@@ -467,69 +443,22 @@ export default function InstantQuoteWizard() {
 
             {answers.floodZone === "yes" && answers.location === "exterior_buried" && (
               <p className="mt-4 text-sm text-amber-800 bg-amber-50 border border-brand-accent rounded-lg p-3">
-                ⚠️ Buried safe rooms in flood zones may not be eligible for the Michigan rebate.
-                We can still install — see your quote for details.
+                We’ll review flood-zone conditions and installation requirements during the site consultation.
               </p>
             )}
           </fieldset>
         )}
 
-        {/* STEP 4 */}
+        {/* STEP 4 — optional veteran discount */}
         {step === 4 && (
           <fieldset>
             <legend className="font-heading text-2xl font-extrabold uppercase text-brand mb-1">
-              Are you planning to apply for the Michigan rebate?
+              Is anyone in your household a veteran or active-duty service member?
             </legend>
             <p className="text-sm text-gray-500 mb-5">
-              Michigan offers a 75% rebate up to $7,131.75 through MSP/EMHSD. There&apos;s one
-              critical rule you must know.
+              A 10% discount is available for eligible veterans and active-duty service members.
             </p>
-
-            <div className="border-2 border-brand-accent bg-amber-50 rounded-lg p-5 mb-6">
-              <p className="font-bold text-amber-900 mb-2">⚠️ CRITICAL TIMING WARNING</p>
-              <p className="text-sm text-amber-900 mb-2">
-                The Michigan State Police rebate program requires you to apply and receive written
-                notice to proceed <strong>BEFORE</strong> any purchase or construction begins. If
-                you sign a contract, pay a deposit, or break ground before approval, you will be
-                permanently ineligible for the rebate on this project.
-              </p>
-              <p className="text-sm text-amber-900">
-                If you want to apply for the rebate, do <strong>NOT</strong> accept this quote
-                until your application is approved. We&apos;ll hold your quote pricing for 30 days
-                while you apply.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <RadioCard
-                name="rebate"
-                value="applying_rebate"
-                checked={answers.rebateIntent === "applying_rebate"}
-                onChange={() => update({ rebateIntent: "applying_rebate" })}
-              >
-                Yes — I plan to apply for the rebate (I understand I must wait for approval before
-                purchasing)
-              </RadioCard>
-              <RadioCard
-                name="rebate"
-                value="not_applying"
-                checked={answers.rebateIntent === "not_applying"}
-                onChange={() => update({ rebateIntent: "not_applying" })}
-              >
-                No — I&apos;m not applying for the rebate, I want to proceed now
-              </RadioCard>
-              <RadioCard
-                name="rebate"
-                value="learning_more"
-                checked={answers.rebateIntent === "learning_more"}
-                onChange={() => update({ rebateIntent: "learning_more" })}
-              >
-                I want to learn more about the rebate first
-              </RadioCard>
-            </div>
-            <FieldError msg={errors.rebateIntent} />
-
-            <label className="flex items-center gap-3 mt-5 cursor-pointer">
+            <label className="flex items-center gap-3 cursor-pointer">
               <input
                 type="checkbox"
                 checked={!!answers.veteran}
@@ -537,7 +466,7 @@ export default function InstantQuoteWizard() {
                 className="h-4 w-4 accent-brand-accent"
               />
               <span className="text-sm text-gray-800">
-                I am a veteran or active-duty military (10% discount applies)
+                I am a veteran or active-duty service member
               </span>
             </label>
           </fieldset>
@@ -764,54 +693,6 @@ export default function InstantQuoteWizard() {
         </div>
       </div>
 
-      {/* Rebate confirmation modal */}
-      {showRebateModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="rebate-modal-title"
-        >
-          <div className="bg-white rounded-xl max-w-lg w-full p-6 sm:p-8 shadow-2xl">
-            <h2
-              id="rebate-modal-title"
-              className="font-heading text-2xl font-extrabold uppercase text-brand mb-3"
-            >
-              Before we send your quote — one more check
-            </h2>
-            <p className="text-sm text-gray-700 mb-3">
-              You told us you&apos;re planning to apply for the Michigan rebate. We&apos;re about
-              to email you a quote, but receiving this quote does not start any contract or
-              purchase. Do not pay any deposit or sign anything until:
-            </p>
-            <ol className="list-decimal pl-5 text-sm text-gray-700 space-y-1 mb-3">
-              <li>You&apos;ve submitted your application to MSP/EMHSD, AND</li>
-              <li>You&apos;ve received written notice to proceed from the state.</li>
-            </ol>
-            <p className="text-sm text-amber-900 bg-amber-50 border border-brand-accent rounded-lg p-3 mb-5">
-              Doing either of those things before approval will make you permanently ineligible
-              for the rebate on this project.
-            </p>
-            <div className="flex flex-col-reverse sm:flex-row gap-3 sm:justify-end">
-              <button
-                type="button"
-                onClick={() => setShowRebateModal(false)}
-                className="font-bold py-3 px-6 rounded-lg border border-brand text-brand hover:bg-gray-50"
-              >
-                Go back
-              </button>
-              <button
-                type="button"
-                onClick={doSubmit}
-                disabled={submitting}
-                className="font-bold py-3 px-6 rounded-lg bg-brand-accent text-white hover:opacity-90 disabled:opacity-60"
-              >
-                {submitting ? "Sending…" : "I understand — send my quote"}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -827,7 +708,6 @@ function ReviewStep({
   submitting: boolean;
 }) {
   const quote = calculateQuote(answers as QuizAnswers);
-  const applying = answers.rebateIntent === "applying_rebate";
 
   return (
     <div>
@@ -898,25 +778,13 @@ function ReviewStep({
             </tbody>
           </table>
 
-          {applying && (
-            <div className="mt-4 bg-amber-50 border border-brand-accent rounded-lg p-4 text-sm">
-              <div className="flex justify-between mb-1">
-                <span>Estimated rebate (75%)</span>
-                <span className="text-green-700">{formatCurrency(quote.estimatedRebate)}</span>
-              </div>
-              <div className="flex justify-between font-bold text-brand">
-                <span>Net out-of-pocket</span>
-                <span>{formatCurrency(quote.netOutOfPocket)}</span>
-              </div>
-            </div>
-          )}
         </div>
       )}
 
-      {quote.rebateFlags.length > 0 && (
+      {quote.siteNotes.length > 0 && (
         <ul className="list-disc pl-5 text-sm text-amber-800 bg-amber-50 border border-brand-accent rounded-lg p-4 mb-5 space-y-1">
-          {quote.rebateFlags.map((f, i) => (
-            <li key={i}>{f}</li>
+          {quote.siteNotes.map((note, i) => (
+            <li key={i}>{note}</li>
           ))}
         </ul>
       )}
@@ -930,8 +798,8 @@ function ReviewStep({
       <p className="text-xs text-gray-500 leading-relaxed">
         This estimate is based on the information you provided and assumes standard site
         conditions. Final pricing is confirmed after a site visit. Quote valid for 30 days from
-        issue. Aaron Spoor Construction LLC is licensed and insured and will sign the FEMA
-        Certificate of Installation required for rebate eligibility.
+        issue. Our design and installation process uses applicable FEMA safe-room guidance as a
+        reference. FEMA does not certify or endorse individual contractors or products.
       </p>
 
       {submitting && <p className="sr-only">Sending your quote…</p>}

@@ -5,7 +5,7 @@ const TIERS = [
     price: "$6,999",
     capacity: "Fits up to 4 people",
     popular: false,
-    features: ['1/4" A36 plate steel', "FEMA P-320 / P-361 rated", "Bolt-down installation"],
+    features: ['1/4" A36 plate steel', "Designed using FEMA safe-room guidance", "Bolt-down installation"],
   },
   {
     name: "3-Bedroom",
@@ -35,7 +35,7 @@ export default function PricingSection() {
             Pricing
           </h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            All prices include design, fabrication, delivery, and professional installation — and are priced to stay under the Michigan rebate benefit cap. Larger or specialty installs get a free custom quote.
+            All prices include design, fabrication, delivery, and professional installation. Larger or specialty installs get a free custom quote.
           </p>
         </div>
 
@@ -86,14 +86,9 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 text-sm text-gray-700 space-y-2 max-w-3xl mx-auto">
-          <p>
-            <strong className="text-brand">FEMA Hazard Mitigation Grants</strong> may cover up to 75% of your installation cost for qualifying Michigan homeowners. Ask us about eligibility when you call.
-          </p>
-          <p className="text-gray-500">
-            Financing available through third-party partners — ask for details.
-          </p>
-        </div>
+        <p className="text-center text-sm text-gray-500 max-w-3xl mx-auto">
+          Financing may be available through third-party partners — ask us for current details.
+        </p>
       </div>
     </section>
   );

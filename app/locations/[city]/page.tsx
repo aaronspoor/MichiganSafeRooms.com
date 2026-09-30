@@ -91,12 +91,12 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const data = CITIES[city];
   if (!data) return {};
   return {
-    title: `Safe Rooms in ${data.cityName}, MI | FEMA-Compliant Installation`,
-    description: `Michigan Safe Rooms installs FEMA P-320 compliant steel safe rooms in ${data.cityName}, ${data.countyName} County, MI. EF5-rated, same-day installation. Free quote — no obligation.`,
+    title: `Safe Rooms in ${data.cityName}, MI | Safe Room Installation`,
+    description: `Michigan Safe Rooms installs steel safe rooms in ${data.cityName}, ${data.countyName} County, MI, using applicable FEMA safe-room guidance. Same-day installation. Free quote — no obligation.`,
     alternates: { canonical: `https://michigansaferooms.com/locations/${city}` },
     openGraph: {
       title: `Safe Rooms in ${data.cityName}, MI | Michigan Safe Rooms`,
-      description: `FEMA-compliant steel safe room installation in ${data.cityName}, MI. EF5-rated. Same-day install. Free quote.`,
+      description: `Steel safe room installation in ${data.cityName}, MI, using applicable FEMA safe-room guidance. Same-day install. Free quote.`,
       url: `https://michigansaferooms.com/locations/${city}`,
     },
   };
@@ -128,7 +128,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             Safe Rooms in<br /><span className="text-brand-accent">{cityName}, MI</span>
           </h1>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-8">
-            FEMA P-320 compliant steel safe rooms designed, fabricated, and installed in {cityName} and {countyName} County. One call — everything included.
+            Steel safe rooms designed and installed in {cityName} and {countyName} County using applicable FEMA safe-room guidance. One call — everything included.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/instant-quote" className="bg-brand-accent hover:opacity-90 text-white font-bold px-10 py-4 rounded-lg text-lg">
