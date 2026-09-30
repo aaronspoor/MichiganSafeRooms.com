@@ -13,7 +13,7 @@ const TIERS = [
     price: "$7,999",
     capacity: "Most popular — fits up to 6 people",
     popular: true,
-    features: ['1/4" A36 plate steel', "FEMA P-320 / P-361 rated", "Bolt-down installation"],
+    features: ['1/4" A36 plate steel', "Designed using FEMA safe-room guidance", "Bolt-down installation"],
   },
   {
     name: "4-Bedroom",
@@ -21,7 +21,7 @@ const TIERS = [
     price: "$8,999",
     capacity: "Fits up to 8 people",
     popular: false,
-    features: ['1/4" A36 plate steel', "FEMA P-320 / P-361 rated", "Bolt-down installation"],
+    features: ['1/4" A36 plate steel', "Designed using FEMA safe-room guidance", "Bolt-down installation"],
   },
 ];
 
@@ -87,7 +87,7 @@ export default function PricingSection() {
         </div>
 
         <p className="text-center text-sm text-gray-500 max-w-3xl mx-auto">
-          Financing may be available through third-party partners — ask us for current details.
+          Financing may be available through third-party partners. Ask for current details when requesting your written quote.
         </p>
       </div>
     </section>

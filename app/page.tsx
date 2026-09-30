@@ -289,7 +289,7 @@ export default function HomePage() {
               <a href="/instant-quote" className="text-brand-light font-semibold underline">
                 Use our instant quote tool
               </a>
-              , or fill out the form below and we&rsquo;ll be in touch within one business day.
+              , or fill out the form below and we&rsquo;ll email a written quote within one business day.
             </p>
           </div>
 
